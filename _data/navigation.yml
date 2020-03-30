@@ -1,4 +1,8 @@
 header:
+  - title:      Docs
+    url:        /index.html
+  - title:      文档
+    url:        /index.html
   - titles:
       # @start locale config
       en      : &EN       Archive
@@ -48,3 +52,4 @@ header:
       fr-LU   : *FR
       # @end locale config
     url: /about.html
+
