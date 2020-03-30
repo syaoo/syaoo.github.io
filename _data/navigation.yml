@@ -1,8 +1,8 @@
 header:
-  - title:      Docs
-    url:        /index.html
-  - title:      文档
-    url:        /index.html
+  - titles:
+      en      : &EN       GitHub
+    url: https://github.com/syaoo
+  
   - titles:
       # @start locale config
       en      : &EN       Archive
