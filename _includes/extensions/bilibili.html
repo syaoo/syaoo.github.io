@@ -1,5 +1,65 @@
+<script>
+// 程序算法来自：如何看待 2020 年 3 月 23 日哔哩哔哩将稿件的「av 号」变更为「BV 号」？ - mcfx的回答 - 知乎
+// https://www.zhihu.com/question/381784377/answer/1099438784
+	
+//编码表
+var table = 'fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF';
+var tr = {};
+for (var i =0; i<table.length; i++)
+{
+	tr[table[i]]=i;
+}
+var s=[11,10,3,8,4,6];
+var xor=177451812;
+var add=8728348608;
+
+//bvid转为aid
+function b2a(bvid)
+{
+	var r=0;
+	for (var i=0; i<6; i++)
+	{
+		r+=tr[bvid[s[i]]]*58**i;
+	}
+		
+	return (r-add)^xor;
+}
+//aid转为bvid
+function a2b(aid)
+{
+	aid = (aid^xor)+add;
+	var r= 'BV1  4 1 7  '.split('');
+	for (var i=0; i<6; i++)
+	{
+		var idx = Math.floor(aid/Math.pow(58,i))%58;;
+		r[s[i]]=table[idx];
+	}
+	return r.join('');
+}
+function setsrc(id)
+{
+	if (id.slice(0,2).toLowerCase()=='bv')
+	{
+         //如果是bvid则转换为aid
+	 //	var aid = b2a(id)
+              var src="//player.bilibili.com/player.html?bvid={{ getid(include.id) }}&page=1"
+	}
+        else
+        {
+	      var src="//player.bilibili.com/player.html?aid={{ getid(include.id) }}&page=1"
+        }
+        document.getElementsByTagName("iframe")[0].setAttribute("src",src);
+}
+</script>
+
 <div class="extensions extensions--video">
-  <iframe src="//player.bilibili.com/player.html?aid={{ include.id }}&page=1"
-    frameborder="no" scrolling="no" allowfullscreen="true">
+  <iframe src="//player.bilibili.com/player.html?bvid={{ include.id }}&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
   </iframe>
 </div>
+
+<!--
+<div class="extensions extensions--video" onclick="setsrc()">
+  <iframe scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+  </iframe>
+</div>
+-->
