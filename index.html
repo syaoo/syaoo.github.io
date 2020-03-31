@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>SYAO</title>
+<title></title>
 
 
     <meta property="og:type" content="website">
@@ -126,235 +126,9 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-30T05:44:47.470Z">2020-03-30</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 123 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/30/hello-world/">Hello World</a>
-            
-        </h1>
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
+ 
 
 
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-09T12:19:21.000Z">2019-12-09</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 分钟 读完 (大约 1576 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">机器学习-线性回归与逻辑回归</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="机器学习-线性回归与逻辑回归">机器学习-线性回归与逻辑回归</h1>
-<p>符号约定：<br />
-<span class="math inline">\(m\)</span> - 训练集中样本数量<br />
-<span class="math inline">\(n\)</span> - 样本的特征数量<br />
-<span class="math inline">\(x\)</span> - 输入变量<br />
-<span class="math inline">\(\theta\)</span> - 预测参数<br />
-<span class="math inline">\(y\)</span> - 目标变量<br />
-<span class="math inline">\(x_i^j\)</span> - 第<span class="math inline">\(j\)</span>个样本中的第<span class="math inline">\(i\)</span>个变量</p>
-<h2 id="线性回归">线性回归</h2>
-<p>线性回归可发现输入变量与目标变量之间的相关关系，从而根据已知的条件来预测结果。</p>
-<p><strong>假设函数(hypothesis Fun)</strong><br />
-<span class="math display">\[
-h_{\theta}(x)=\theta_0+\theta_1x_1+...+\theta_nx_n = \sum_{i=0}^n\theta_ix_i=\theta^Tx
-\]</span> 式中，<span class="math inline">\(x_0\)</span>=1。</p>
-<p><strong>代价函数(Cost Fun)</strong><br />
-<span class="math display">\[
-J(\theta) = \frac{1}{2m}\sum_{j=1}^n(h_{\theta}(x^i)-y^j)^2
-\]</span> 代价函数反映了在给定预测参数<span class="math inline">\(\theta\)</span>下，假设函数与实际结果的差距，为了能够得到最优的拟合结果，我们需要找到最佳拟合参数<span class="math inline">\(\theta\)</span>使得代价函数最小。</p>
-<p>求解最优参数的方法：<strong>梯度下降法</strong>，<strong>正规方程</strong></p>
-<p><strong>梯度下降法</strong> 开始时我们随机选择一个参数的组合<span class="math inline">\((\theta_0,\theta_1,...,\theta_n)\)</span>，计算代价函数，然后我们寻找下一个能让代价函数值下降最多的参数组合。我们持续这么做直到到到一个局部最小值（<strong>local minimum</strong>）。</p>
-<p>批量梯度下降 (BGD, <strong>batch gradient descent</strong>) 的算法: <span class="math display">\[
-\begin{align}
-repeat :&amp;\\
-&amp;\theta_j := \theta_j-\alpha\frac{\partial}{\partial{\theta_j}}{J(\theta)},\   (j=0,1,...,m)\\
-\end{align}
-\]</span> 其中，<span class="math inline">\(\frac{\partial}{\partial{\theta_j}}{J(\theta)} = \frac{1}{m}\sum_{i=1}^m(h_{\theta}(x^i)-y^i)x_j^i\)</span>，我们开始随机选择一组的参数，计算所有的预测结果后，再给所有的参数一个新的值，如此循环直到收敛，方可得到最优的参数<span class="math inline">\(\theta\)</span>。</p>
-<p><strong>正规方程（ Normal Equation）</strong> 假设函数：<span class="math inline">\(h_{\theta}(X)=X\theta\)</span>，代价函数：<span class="math inline">\(J(\theta)=\frac{1}{2}(h_{\theta}(X)-y)^T(h_{\theta}(X)-y)\)</span> 其中， <span class="math display">\[
-\begin{align}
-X=&amp;\begin{bmatrix} 1 &amp; x_1^1 &amp; \cdots &amp; x_n^1 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 1 &amp; x_1^m &amp; \cdots &amp; x_n^m \end{bmatrix}(size:m*(n+1)),\\
-\theta=&amp; \begin{bmatrix}\theta_0 \\ \theta_1\\  \vdots \\ \theta_n \end{bmatrix}(size:(n+1)*1),\\
-y=&amp; \begin{bmatrix}y_1 \\ y_2 \\  \vdots \\ \ y_m \end{bmatrix}(size:m*1)
-\end{align}
-\]</span> 要求<span class="math inline">\(J(\theta)\)</span>的最小值，可以另<span class="math inline">\(\frac{\partial}{\partial{\theta}}{J(\theta)}=0 \Rightarrow X^T(X\theta-y)=0\)</span>。所以： <span class="math display">\[
-\theta =(X^TX)^{-1}X^Ty
-\]</span> <strong>两种方法的差异</strong> 梯度下降 | 正规方程 ---- | ---- 需要选择学习率<span class="math inline">\(\alpha\)</span> | 不需要 需要多次迭代 | 一次运算得出 当特征数量<span class="math inline">\(n\)</span>大时也能较好适用 | 需要计算 <span class="math inline">\((X^TX)^{-1}\)</span>如果特征数量<span class="math inline">\(n\)</span>较大则运算代价大，因为矩阵逆的计算时间复杂度为<span class="math inline">\(O(n^3)\)</span>，通常来说当<span class="math inline">\(n\)</span>小于10000 时还是可以接受的 适用于各种类型的模型 | 只适用于线性模型，不适合逻辑回归模型等其他模型</p>
-<h2 id="逻辑回归">逻辑回归</h2>
-<p>逻辑回归一般应用在分类问题中，通过引入<strong>逻辑函数(logistic function)</strong><span class="math inline">\(g(z)=\frac{1}{1-e^z}\)</span>，使得逻辑回归模型的假设函数<span class="math inline">\(h_{\theta}(x)=g(\theta^Tx)\)</span>输出在<span class="math inline">\([0,1]\)</span>之间。<span class="math inline">\(h(\theta)\)</span>的作用是，对于输入标量<span class="math inline">\(x\)</span>，根据给定参数<span class="math inline">\(\theta\)</span>输出<span class="math inline">\(y=1\)</span>的可能性，即<span class="math inline">\(h_{\theta}(x)=P(y=1|x;\theta)\)</span>。</p>
-<p>重新定义代价函数: <span class="math inline">\(J(\theta)=\frac{1}{m}Cost(h_{\theta}(x),y)\)</span>，对于线性回归：<span class="math inline">\(Cost(h_{\theta}(x),y)=\sum_{j=1}^n\frac{1}{2}(h_{\theta}(x^i)-y^j)^2\)</span>；定义逻辑回归中： <span class="math display">\[
-Cost(h_{\theta}(x),y)=
-\begin{cases}
--log(h_{\theta}(x)), &amp; \text{if $y=1$}\\
--log(1-h_{\theta}(x)), &amp; \text{if $y$=0}
-\end{cases}
-\]</span> <span class="math inline">\(h_{\theta}(x)\)</span>与<span class="math inline">\(Cost(h_{\theta}(x),y)\)</span>之间的关系如图：</p>
-<figure>
-<img src="https://s1.ax1x.com/2020/03/29/GV7zsx.jpg" alt="GV7zsx.jpg" /><figcaption>GV7zsx.jpg</figcaption>
-</figure>
-<p>简化为：<span class="math inline">\(Cost(h_{\theta}(x),y)=-[y*log(h_{\theta}(x))+(1-y)*log(1-h_{\theta}(x))]\)</span>，从而： <span class="math display">\[
-J(\theta)=\frac{1}{m}\sum_{i=1}^m-[y^i*log(h_{\theta}(x^i))+(1-y^i)*log(1-h_{\theta}(x^i))]
-\]</span> 与线性回归相同，可以采用梯度下降法来求得最优参数： <span class="math display">\[
-\begin{align}
-repeat :&amp;\\
-&amp;\theta_j := \theta_j-\alpha\frac{\partial}{\partial{\theta_j}}{J(\theta)},\   (j=0,1,...,m)\\
-\end{align}
-\]</span> 其中，<span class="math inline">\(\frac{\partial}{\partial{\theta_j}}{J(\theta)} = \frac{1}{m}\sum_{i=1}^m(h_{\theta}(x^i)-y^i)x_j^i\)</span>。</p>
-<p>这里，似乎逻辑回归与线性回归算法是相同的，然而实际上由于二者的假设函数不同，所以<strong>逻辑回归的梯度下降与线性回归的梯度下降是两种不同的算法</strong>。</p>
-<h2 id="过拟合问题">过拟合问题</h2>
-<p>解决方案：</p>
-<ul>
-<li>丢弃一些不能帮助我们正确预测的特征。手工或者算法选择；</li>
-<li>正则化。 保留所有的特征，但是减少参数的大小（magnitude）。</li>
-</ul>
-<p><strong>正则化线性回归</strong><br />
-正则化线性回归的代价函数为： <span class="math display">\[
-J(\theta) = \frac{1}{2m}[\sum_{i=1}^n(h_{\theta}(x^i)-y^i)^2+\lambda\sum_{j=1}^n\theta_j^2]
-\]</span> 由于未对<span class="math inline">\(\theta_0\)</span>进行正则化，所以梯度下降算法将分两种情形： <span class="math display">\[
-\begin{align}
-repeat :&amp;\\
-&amp; \theta_0 := \theta_0-\alpha \frac{1}{m}\sum_{i=1}^n(h_{\theta}(x^i)-y^i)x_0^i \\
-&amp;\theta_j := \theta_j-\alpha [\frac{1}{m}\sum_{i=1}^n(h_{\theta}(x^i)-y^i)x_j^i+\frac{\lambda}{m}\theta_j],\   (j=1,...,m)\\
-\end{align}
-\]</span> 对上面<span class="math inline">\(j=1,...,m\)</span>时的式子整理：<span class="math inline">\(\theta_j=\theta_j(1-\alpha\frac{\lambda}{m} - \frac{\alpha}{m}\sum_{i=1}^m(h_{\theta}(x^i)-y^i)x^i_j)\)</span>，可以看出，正则化线性回归的梯度下降算法的变化在于，每次都在原有算法更新规则的基础上令<span class="math inline">\(\theta\)</span>值减少了一个额外的值。</p>
-<p>也可以利用正规方程求解： <span class="math display">\[
-\theta =(X^TX+\lambda \begin{bmatrix}
-0 &amp; &amp; &amp; \\ 
-&amp; 1 &amp; &amp; \\
-&amp; &amp; \ddots &amp; \\
-&amp; &amp; &amp; 1
-\end{bmatrix})^{-1}X^Ty, \ \text{矩阵大小：(n+1)*(n+1)}
-\]</span></p>
-<p><strong>正则化逻辑回归</strong><br />
-正则化逻辑回归的代价函数为： <span class="math display">\[
-J(\theta)=\frac{1}{m}\sum_{i=1}^m-[y^i*log(h_{\theta}(x^i))+(1-y^i)*log(1-h_{\theta}(x^i))]+\frac{\lambda}{2m}\sum_{j=1}^n\theta^2_j
-\]</span> 梯度下降算法： <span class="math display">\[
-\begin{align}
-repeat :&amp;\\
-&amp; \theta_0 := \theta_0-\alpha \frac{1}{m}\sum_{i=1}^n(h_{\theta}(x^i)-y^i)x_0^i \\
-&amp;\theta_j := \theta_j-\alpha [\frac{1}{m}\sum_{i=1}^n(h_{\theta}(x^i)-y^i)x_j^i+\frac{\lambda}{m}\theta_j],\   (j=1,...,m)\\
-\end{align}
-\]</span></p>
-<p>处理梯度下降法外，还有<strong>共轭梯度</strong>（<strong>Conjugate Gradient</strong>），<strong>局部优化法</strong>(<strong>Broyden fletcher goldfarb shann,BFGS</strong>)和<strong>有限内存局部优化法</strong>(<strong>LBFGS</strong>)等高级算法来求解最优参数，在matlab或octave中可以直接应用这些方法。</p>
-<p>参考：<br />
-<a href="http://www.ai-start.com/ml2014/">斯坦福大学2014机器学习教程中文笔记目录</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-09T00:19:21.000Z">2019-11-09</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 324 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/09/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/">使用Hexo建立博客</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="建站">建站</h4>
-<p>安装hexo之后，便可以开始建站 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<h4 id="private-repository">Private repository</h4>
-<p>The following instruction is adapted from one-command deployment page. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install hexo-deployer-git.</span><br></pre></td></tr></table></figure> Add the following configurations to _config.yml, (remove existing lines if any) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;&lt;username&gt;&#x2F;&lt;project&gt;</span><br><span class="line">  # example, https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexojs.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Run hexo clean &amp;&amp; hexo deploy.</span><br></pre></td></tr></table></figure> Check the webpage at username.github.io.</p>
-<h5 id="project-page">Project page</h5>
-<p>如果你更希望你的站点部署在 <code>&lt;你的 GitHub 用户名&gt;.github.io</code> 的子目录中，你的 repository 需要直接命名为子目录的名字，这样你的站点可以通过 <code>https://&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt;</code> 访问。你需要检查你的 Hexo 配置文件，将 url 修改为 <code>https://&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt;</code>、将 root 的值修改为 <code>/&lt;repository 的名字&gt;/</code></p>
-<h5 id="配置hexo-deployer-git">配置<a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></h5>
-<p><code>_config.yml</code>设置 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># You can use this:</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">[branch]</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">[message]</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">[git</span> <span class="string">user]</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">[git</span> <span class="string">email]</span></span><br><span class="line">  <span class="attr">extend_dirs:</span> <span class="string">[extend</span> <span class="string">directory]</span></span><br><span class="line">  <span class="attr">ignore_hidden:</span> <span class="literal">false</span> <span class="comment"># default is true</span></span><br><span class="line">  <span class="attr">ignore_pattern:</span> <span class="string">regexp</span>  <span class="comment"># whatever file that matches the regexp will be ignored when deploying</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># or this:</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">[message]</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">  <span class="comment"># both formats are acceptable</span></span><br><span class="line">    <span class="string">[repo</span> <span class="string">host</span> <span class="string">name]:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;[,branch]</span></span><br><span class="line">    <span class="string">[another</span> <span class="string">repo]:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br><span class="line">      <span class="attr">branch:</span> <span class="string">[branch]</span></span><br><span class="line">      <span class="attr">token:</span> <span class="string">[$ENV_TOKEN]</span></span><br><span class="line">  <span class="attr">extend_dirs:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">[extend</span> <span class="string">directory]</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">[another</span> <span class="string">extend</span> <span class="string">directory]</span></span><br><span class="line">  <span class="attr">ignore_hidden:</span></span><br><span class="line">    <span class="attr">public:</span> <span class="literal">false</span></span><br><span class="line">    <span class="string">[extend</span> <span class="string">directory]:</span> <span class="literal">true</span></span><br><span class="line">    <span class="string">[another</span> <span class="string">extend</span> <span class="string">directory]:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">ignore_pattern:</span></span><br><span class="line">    <span class="string">[folder]:</span> <span class="string">regexp</span>  <span class="comment"># or you could specify the ignore_pattern under a certain directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#names of repo do not matter, and can be omitted if there is only one repo in your config:</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">[$ENV_TOKEN]</span></span><br><span class="line">  <span class="comment"># ...your other configs</span></span><br></pre></td></tr></table></figure></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
 
 
 
@@ -394,7 +168,7 @@ repeat :&amp;\\
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>重 庆</span>
+                        <span></span>
                     </p>
                     
                 </div>
@@ -512,83 +286,10 @@ repeat :&amp;\\
     </div>
 </div>
     
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            标签云
-        </h3>
-        <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a>
-    </div>
-</div>
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
-        
-            <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/03/30/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T05:44:47.470Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="机器学习-线性回归与逻辑回归">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T12:19:21.000Z">2019-12-09</time></div>
-                    <a href="/2019/12/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">机器学习-线性回归与逻辑回归</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/11/09/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用Hexo建立博客">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-09T00:19:21.000Z">2019-11-09</time></div>
-                    <a href="/2019/11/09/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用Hexo建立博客</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
+
         
             <div class="card widget">
     <div class="card-content">
@@ -596,70 +297,12 @@ repeat :&amp;\\
         <h3 class="menu-label">
             归档
         </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/12/">
-                <span class="level-start">
-                    <span class="level-item">十二月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
         </div>
     </div>
 </div>
         
             <div class="card widget">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%8A%80%E6%9C%AF/">
-                        <span class="tag">技术</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="tag">机器学习</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
     </div>
 </div>
         
@@ -674,70 +317,6 @@ repeat :&amp;\\
 
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/03/30/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T05:44:47.470Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="机器学习-线性回归与逻辑回归">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T12:19:21.000Z">2019-12-09</time></div>
-                    <a href="/2019/12/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">机器学习-线性回归与逻辑回归</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/11/09/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用Hexo建立博客">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-09T00:19:21.000Z">2019-11-09</time></div>
-                    <a href="/2019/11/09/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用Hexo建立博客</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
 </div>
     
         <div class="card widget">
@@ -746,70 +325,13 @@ repeat :&amp;\\
         <h3 class="menu-label">
             归档
         </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/12/">
-                <span class="level-start">
-                    <span class="level-item">十二月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
         </div>
     </div>
 </div>
     
         <div class="card widget">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%8A%80%E6%9C%AF/">
-                        <span class="tag">技术</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="tag">机器学习</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
+
     </div>
 </div>
     
@@ -829,8 +351,7 @@ repeat :&amp;\\
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2020 瓜瓜gxgx&nbsp;
-                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                               Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
                 </p>
