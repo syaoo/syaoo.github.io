@@ -7,7 +7,7 @@ article_header:
   background_color: '#203028'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
-    src: /assets/images/cover3.jpg参考官[方文档](https://docs.streamlit.io)
+    src: /assets/images/cover3.jpg
 ---
 
 > Streamlit是一个开放源代码的Python库，可以轻松地为机器学习和数据科学构建漂亮的自定义web应用程序。  
@@ -275,3 +275,4 @@ Strealit每次执行被`@st.cache()`标记的函数是会做以下三件事：
     # This is a different URL, so the function executes.
     ```
 
+参考: [官方文档](https://docs.streamlit.io)
