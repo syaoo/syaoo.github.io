@@ -273,7 +273,22 @@ Numpy内置许多基本数据类型，对python的基本数据类型进行扩充
    上面的方法除了`b=np.resize(a,(2,3,4))`,`b=a.flatten()`中`b`是`a`的**深复制**外，其他方法都是**浅复制**（视图）。
    
 3. 拼接、分割  
-  
+  数组拼接：`np.concatenate`, 
+
+  ```python
+  ma.concatenate : Concatenate function that preserves input masks.
+  array_split : Split an array into multiple sub-arrays of equal or
+                near-equal size.
+  split : Split array into a list of multiple sub-arrays of equal size.
+  hsplit : Split array into multiple sub-arrays horizontally (column wise)
+  vsplit : Split array into multiple sub-arrays vertically (row wise)
+  dsplit : Split array into multiple sub-arrays along the 3rd axis (depth).
+  stack : Stack a sequence of arrays along a new axis.
+  hstack : Stack arrays in sequence horizontally (column wise)
+  vstack : Stack arrays in sequence vertically (row wise)
+  dstack : Stack arrays in sequence depth wise (along third dimension)
+  block : Assemble arrays from blocks.
+  ```
 
 4. 排序  
    argsort
