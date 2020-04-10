@@ -1,6 +1,8 @@
+update_time=date
 echo --- add file and commit ---
-git add . && git commit -m 'update'
+echo 'update'update_time
+git add . && git commit -m 'update'update_time
 echo --- push origin master:master ---
 git push origin master:master
-echo Done!的
+echo --- Done! ---
 read -n1 -p "Press any key to continue..."
