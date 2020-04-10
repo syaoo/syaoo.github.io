@@ -1,4 +1,5 @@
 update_time=$(date  "+%xT%X")
+echo --- pull ---
 git pull origin master:master
 echo --- add file and commit ---
 echo 'update at:'${update_time}
