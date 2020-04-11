@@ -1,9 +1,9 @@
-update_time=$(date  "+%xT%X")
-echo --- pull ---
+update_time=$(date  "+%x%X")
+echo --- pull ing---
 git pull origin master:master
 echo --- add file and commit ---
 echo 'update at:'${update_time}
-git add . && git commit -m 'update at:'${update_time}
+git add . && git commit -m "update at:${update_time}"
 echo --- push origin master:master ---
 git push origin master:master
 echo --- Done! ---
