@@ -1,6 +1,6 @@
 ---
 title: Pandas - Python数据处理
-tag: Matplotlib  Python
+tag: ["Pandas", " Python"]
 article_header:
   type: overlay
   theme: dark

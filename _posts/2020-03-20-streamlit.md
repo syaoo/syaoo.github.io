@@ -1,6 +1,6 @@
 ---
 title: Streamlit - Python Web应用框架
-tag: Python Streamlit
+tag: Streamlit
 article_header:
   type: overlay
   theme: dark

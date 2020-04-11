@@ -1,6 +1,6 @@
 ---
 title: Python数据处理 - Numpy
-tag: Python Numpy
+tag: ["Python", "Numpy"]
 article_header:
   type: overlay
   theme: dark

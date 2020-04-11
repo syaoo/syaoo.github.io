@@ -1,6 +1,6 @@
 ---
 title: Python数据处理 - Pandas
-tag: Pandas  Python
+tag: ["Pandas", "Python"]
 article_header:
   type: overlay
   theme: dark

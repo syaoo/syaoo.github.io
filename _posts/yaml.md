@@ -1,6 +1,6 @@
 ---
 title: YAML
-tag: YAML PyYAML python
+tag: ["YAML", "PyYAML"]
 article_header:
   type: overlay
   theme: dark
