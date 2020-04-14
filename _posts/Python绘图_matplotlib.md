@@ -13,8 +13,8 @@ article_header:
 [Matplotlib](https://matplotlib.org/tutorials/index.html)是一个功能强大的数据可视化Python库，该库让使用Python像在Matlab中那样方便。利用它可以绘制`折线图(plot)`, `柱形图( bar)`, `直方图(hist)`, `饼图(pie)`, `箱线图(box)`, `密度图(kde)`, `面积图(area)`, `(散点图 (scatter)`, `散点图矩阵(scatter_matrix)` 等。 
 
 <!--more-->
-
-
+Matlabplot图形主要有Figure、Axes、Axis、Artist四个主要部分，Figure是Axes、Axis以及Artist等元素的容器；Axes是具体的绘图区域，可以包含多个Axis；Axis就是坐标轴；图中所有可见元素都是Artist，如Legned, Lines,甚至Figure, Axes, Axis，下图标注了完整Matplotlib图形的各元素名称：
+![GphsFe.png](https://s1.ax1x.com/2020/03/26/GphsFe.png)  
 
 其他绘图工具:    
 - [Seaborn](http://seaborn.pydata.org/): Seaborn是一个基于matplotlib的Python数据可视化库。它提供易于使用的高级接口，可以方便绘制`概率分布图(displot )`,  `密度分布图(kdeplot)`, `联合分布图(joinplot)`, `箱线图(boxplots)`, `回归图(lmplot)`, `热力图( heatmap)`等许多信息丰富的图形；
