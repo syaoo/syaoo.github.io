@@ -312,3 +312,4 @@ frompyfunc(func, nin, nout)
 2. [numpy ndarray详解](https://danzhuibing.github.io/py_numpy_ndarray.html)
 3. [Data type objects (dtype) — NumPy v1.17 Manual](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
 
+NumPy-快速处理数据 | 用 Python 做科学计算: https://wizardforcel.gitbooks.io/hyry-studio-scipy/2.html
