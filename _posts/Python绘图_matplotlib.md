@@ -16,6 +16,12 @@ article_header:
 Matlabplot图形主要有Figure、Axes、Axis、Artist四个主要部分，Figure是Axes、Axis以及Artist等元素的容器；Axes是具体的绘图区域，可以包含多个Axis；Axis就是坐标轴；图中所有可见元素都是Artist，如Legned, Lines,甚至Figure, Axes, Axis，下图标注了完整Matplotlib图形的各元素名称：
 ![GphsFe.png](https://s1.ax1x.com/2020/03/26/GphsFe.png)  
 
+## Figure
+
+## Axes
+## Axis
+## Artist
+
 其他绘图工具:    
 - [Seaborn](http://seaborn.pydata.org/): Seaborn是一个基于matplotlib的Python数据可视化库。它提供易于使用的高级接口，可以方便绘制`概率分布图(displot )`,  `密度分布图(kdeplot)`, `联合分布图(joinplot)`, `箱线图(boxplots)`, `回归图(lmplot)`, `热力图( heatmap)`等许多信息丰富的图形；
 - [altair](https://altair-viz.github.io/): Declarative statistical visualization library for Python;     
