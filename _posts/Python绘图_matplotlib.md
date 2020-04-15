@@ -27,3 +27,5 @@ Matlabplot图形主要有Figure、Axes、Axis、Artist四个主要部分，Figur
 - [altair](https://altair-viz.github.io/): Declarative statistical visualization library for Python;     
 - [`plotly`](https://plotly.com/python/getting-started/#initialization-for-offline-plotting): plotly是一个交互式的开源绘图库，它支持40多种独特的图表类型;  
 - [Echart](https://www.echartsjs.com/zh/index.html): 使用JavaScript实现的开源数据可视化框架，Python可以通过模块[`pyecharts`](http://pyecharts.org/#/)来调用Echart。  
+
+Python+Matplotlib制作动画 - EndlessCoding - 博客园: https://www.cnblogs.com/endlesscoding/p/10308111.html
