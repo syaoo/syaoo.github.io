@@ -276,10 +276,11 @@ boxplot用于绘制箱线图，会返回一个包含boxes、medians、whiskers�
 #### 网格、图例、标题，轴标签
 1. [grid](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.grid.html?highlight=grid#matplotlib.axes.Axes.grid)  
 `grid( b=None, which='major', axis='both', |*|*kwargs)`控制坐标网格的显示及样式，当所有参数缺省时表示切换网格的可见性。which：{'major', 'minor', 'both'}指定网格类型主网格、副网格或者二者都有，axis：{'both', 'x', 'y'}指定x、y轴方向的网格。其他参数color,linestyle, linewidth等。
-2. legend([Axes.legend](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.legend.html?highlight=legend#matplotlib.axes.Axes.legend),[pyplot.legend](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html?highlight=legend#matplotlib.pyplot.legend)),[Figure.legend](https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html?highlight=legend#matplotlib.figure.Figure.legend)  
+2. legend([Axes.legend](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.legend.html?highlight=legend#matplotlib.axes.Axes.legend),[pyplot.legend](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html?highlight=legend#matplotlib.pyplot.legend),[Figure.legend](https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html?highlight=legend#matplotlib.figure.Figure.legend))  
 Axes.legend是在该Axes上显示图例，第二个是在当前Axes上显示图例，最后一个是在该Figure上显示图例，可指定参数设置字体大小fontsize等属性或使用setp修改、查询。  
 有三种调用方式：1、`legend()`,2、`legend(labels)`,3、`legend(handles, labels)`，方式1、显示已有的legend元素（即label参数的值），如果没有则不能正常显示，
 示例9、图例的显示
+   
     ```python
     fig,((ax1,ax2),(ax3,ax4))= plt.subplots(2,2,figsize=(10,10))
     x = np.linspace(0,10,20)
@@ -305,7 +306,7 @@ Axes.legend是在该Axes上显示图例，第二个是在当前Axes上显示图�
 3. 标题
 Axes、Figure、legend等都有标题，设置方法也很多，如Axes标题`plt.title('str')`(作用与当前Axes),`Axes.set_title('str')`以及使用`setp`函数。Figure的标题可以使用`plt.suptitle('str')`,`fig.suptitle('str')`,legend标题可以使用`legend(title='str')`,`legend.set_title('set')`以及setp设置标题。
 4. xlable,ylabel
-坐标轴的标题，可通过`plt.xlabel('str')`,`plt.ylabel('str')`,`Axes.set_xlabel('str')`,`Axes.set_ylabel('str')`等方式设置。
+下面几个方法可以用于设置坐标轴的名称：`plt.xlabel('str')`,`plt.ylabel('str')`,`Axes.set_xlabel('str')`,`Axes.set_ylabel('str')`
 
 #### 坐标轴样式
 matplotlib除了常规坐线性标轴外，还支持对数、时间序列等坐标轴，还有极坐标等其他不同投影方式的坐标系。
