@@ -304,25 +304,85 @@ Axes.legend是在该Axes上显示图例，第二个是在当前Axes上显示图�
     ![JmC90A.png](https://s1.ax1x.com/2020/04/18/JmC90A.png)
    
 3. 标题
-Axes、Figure、legend等都有标题，设置方法也很多，如Axes标题`plt.title('str')`(作用与当前Axes),`Axes.set_title('str')`以及使用`setp`函数。Figure的标题可以使用`plt.suptitle('str')`,`fig.suptitle('str')`,legend标题可以使用`legend(title='str')`,`legend.set_title('set')`以及setp设置标题。
+Axes、Figure、legend等都有标题，设置方法也很多，如Axes标题`plt.title('str')`(作用与当前Axes),`Axes.set_title('str')`以及使用`setp`函数。Figure的标题可以使用`plt.suptitle('str')`,`fig.suptitle('str')`,legend标题可以使用`legend(title='str')`,`legend.set_title('set')`以及`pyplot.setp`函数或`set`方法设置标题。
 4. xlable,ylabel
-下面几个方法可以用于设置坐标轴的名称：`plt.xlabel('str')`,`plt.ylabel('str')`,`Axes.set_xlabel('str')`,`Axes.set_ylabel('str')`
+下面几个方法可以用于设置坐标轴的名称：`plt.xlabel('str')`,`plt.ylabel('str')`,`Axes.set_xlabel('str')`,`Axes.set_ylabel('str')`以及set(ylabel='str',xlabel='str')方法。
 
 #### 坐标轴样式
 matplotlib除了常规坐线性标轴外，还支持对数、时间序列等坐标轴，还有极坐标等其他不同投影方式的坐标系。
-1. 对数轴  
-当数据跨越多个量级时，通常使用对数轴，在matplotlib中可以使用`plt.xsacle('log')`设置x轴为对数轴，还有`Axes.set_xsacle('log')`,`'log'`表示对数轴，`'linear'`表示线性轴，`'symlog'`、`'logit'`为其他形式的对数轴。`yscale`,`set_yscale`作用与y轴。
-2. 时间序列
+1. 坐标轴范围及刻度  
+- axis：pyplot函数、Axes方法；可以方便的获取、设置xy坐标轴的范围：
+    ```python
+    xmin, xmax, ymin, ymax = axis() # 使用axis获取坐标轴范围
+    xmin, xmax, ymin, ymax = axis([xmin, xmax, ymin, ymax])
+    xmin, xmax, ymin, ymax = axis(option) # 坐标轴其他内置范围
+    # option可以是bool值或字符串：
+    # 'on'     显示坐标轴. 同``True``.
+    # 'off'    不显示坐标轴. 同 ``False``.
+    # 'equal'  修改xy轴范围，使xy轴等比例
+    # 'scaled' 改变绘图框的范围，使xy轴等比例
+    # 'tight'  使范围刚刚够显示数据
+    # 'auto'   自动比例，填满Axes.
+    # 'image'  'scaled' with axis limits equal to data limits.
+    # 'square' 类似scaled，但是xmax-xmin=ymax-ymin
+    ```
+
+
+- ylim,xlim: pyplot函数，设置xy轴范围`ylim([ymin,ymax])`,`ylim(ymin=value,ymax=value)` 
+使用Axes的方法set设置Axes的xlim，ylim属性
+- ax.set(xlim=(xmin, xmax), ylim=(ymin, ymax))
+- set_ylim,set_lim:Axes的方法，用法同ylim。
+- xticks,yticks: pyplot函数；获取、设置x、y轴的刻度，如：
+    ```python
+     mf = font_manager.FontProperties(fname="./uming.ttc") # 实例化字体
+     xt_labels = ["10点{}分".format(i) for i in range(60)]
+     xt_labels += ["11点{}分".format(i) for i in range(60)]
+     plt.xticks(list(range(120))[::4],xt_labels[::4],rotation=-45,fontproperties=yf) # 将标签字符列表映射的数值列表 
+    ```
+-  get_xticks, get_xticklabels, set_xticks, set_xticklabels: Axes方法；获取x轴刻度及标签，设置x轴刻度及标签。类似使用xticks设置刻度及标签，set_*方法可以设置主副刻度。
+
+2. 坐标轴位置、双坐标轴
+- set_ticks_position,spines: `set_ticks_position`是XAxis、Yxais的方法用于设置坐标刻度及便签的位置；[`spines`](https://matplotlib.org/api/spines_api.html?highlight=spines)`是表示绘图区域的上、下、左、右边界的类，`Axes.spines`可以获取Axes的四个`Spine` ，
+    示例10、绘制一个圆并放置坐标轴在原心
+    
+    ```python
+    y=np.sqrt(1-x**2)
+    fig,ax=plt.subplots()
+    ax.plot(x,y,'r-',x,-y,'r-')
+    ax.axis('equal') # 等比例x、y轴
+    tlt=ax.set(title='Circle')
+    
+    # 隐藏另一侧边框
+    ax.spines['top'].set_color('None') # 设置上边界的颜色为空，不显示
+    ax.spines['right'].set_color('None') # 设置右边界的颜色为空，不显示
+    
+    ax.xaxis.set_ticks_position('bottom')
+    ax.yaxis.set_ticks_position('left')
+    # 设置x、y轴位置
+    ax.spines['bottom'].set_position(('data', 0)) # 设置下边界的位置
+    ax.spines['left'].set_position(('data', 0)) # 设置左边界的位置
+    plt.show()
+    ```
+    ![JnGxQU.png](https://s1.ax1x.com/2020/04/18/JnGxQU.png)
+    
+- twinx,twiny: 创建第二的x、y轴；`pyplot.twinx(ax=None)`,`Axes.twinx()`;
+
+3. 时间序列  
 plot_date
+locator_params()
 https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot_date.html#matplotlib.axes.Axes.plot_date
 https://blog.csdn.net/helunqu2017/article/details/78736686
-3. 投影
+4. 对数轴  
+当数据跨越多个量级时，通常使用对数轴，在matplotlib中可以使用`plt.xsacle('log')`设置x轴为对数轴，还有`Axes.set_xsacle('log')`,`'log'`表示对数轴，`'linear'`表示线性轴，`'symlog'`、`'logit'`为其他形式的对数轴。`yscale`,`set_yscale`作用与y轴。自定义https://matplotlib.org/devel/add_new_projection.html#adding-new-scales
 
+5. 投影
+自定义投影https://matplotlib.org/devel/add_new_projection.html#creating-a-new-projection
 #### 其他文本（图例、注释等）
 text任意位置文本,annotate带箭头注释）
+**文本** `text()`可以在任意为题添加文本，支持tex语法，`xlable()`,`ylable()`,`title()`添加特定位置文本。所有文本方法返回` matplotlib.text.Text`实例，同样可以使用`step()`查看
+、设置[属性](https://matplotlib.org/tutorials/text/text_props.html)。`annotate()`可以添加注释，由参数xy表示的要注释的位置和文本xytext的位置。这两个参数都是（x，y）元组。
 
-
-### 多Figure、多Axes布局
+### Axes布局及多Figure
  See Axes Demo for an example of placing axes manually and Basic Subplot Demo for an example with lots of subplots.
 
 https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots
@@ -330,6 +390,18 @@ https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.py
 多个坐标区域subplot
 subplot2grid( ), gridspec类 gridspec.Gridspec(3,3) ax1=plt.subplot(gs[0,:])
 
+### 图像输出
+使用[`savefig`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html?highlight=savefig#matplotlib.pyplot.savefig)可以方便的输出多种格式的图像
+ ```python
+ # 保存当前Figure图像
+ plt.savefig(fname, dpi=None, format=None,transparent=False)
+ # 保存fig的图形
+ fig.savefig(fname, dpi=None, format=None,transparent=False)
+ # fname: 文件名
+ # dpi：分辨率（每英寸点数）
+ # format：输出格式，'png', 'pdf', 'svg', ..., 如果没有，以fname的扩展名格式
+ # transparent：是否透明
+ ```
 
 ## 中文字体显示
 Matplotlib本身并不支持中文字体的显示，若要正常显示中文字体需要进行一些设置，通常有两种方法：
@@ -342,6 +414,7 @@ Matplotlib本身并不支持中文字体的显示，若要正常显示中文字�
    _font = mpl.font_manager.FontProperties(fname=font_path)
    plt.xlabel('时间',fontproperties=_font)
    ```
+```
 2. 全局设置，当前程序中所有图形字体  
 `matplotlib.rc()`用于设置当前rc参数，通过它可以设置字体的参数
    ```python
@@ -356,7 +429,7 @@ Matplotlib本身并不支持中文字体的显示，若要正常显示中文字�
    matplolib.rcParams['font.family']='monospace'
    matplolib.rcParams['font.weight']='bold'
    matplolib.rcParams['font.size']=15
-   ```
+```
    family：字体名称；font.style：字体风格，如 'normal','itaic'；font.size 字体大小。
     一些常见字体：
 
