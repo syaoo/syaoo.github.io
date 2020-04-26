@@ -10,7 +10,7 @@ article_header:
     src: /assets/images/cover0.jpg
 ---
 
-[Matplotlib](https://matplotlib.org/tutorials/index.html)是一个功能强大的数据可视化Python库，利用它可以绘制`折线图(plot)`, `柱形图( bar)`, `直方图(hist)`, `饼图(pie)`, `箱线图(box)`, `密度图(kde)`, `面积图(area)`, `(散点图 (scatter)`, `散点图矩阵(scatter_matrix)` 等。 通过matplotlib.pyplotlib子库可以方便的绘制各种图像，可以Matlab中绘图 那样方便。
+[Matplotlib](https://matplotlib.org/tutorials/index.html)是一个功能强大的数据可视化Python库，利用它可以绘制`折线图(plot)`, `柱形图( bar)`, `直方图(hist)`, `饼图(pie)`, `箱线图(box)`, `密度图(kde)`, `面积图(area)`, `(散点图 (scatter)`, `散点图矩阵(scatter_matrix)` 等。 通过matplotlib.pyplotlib子库可以方便的绘制各种图像，可以像在Matlab中绘图 那样方便。
 
 <!--more-->
 
@@ -337,9 +337,12 @@ matplotlib除了常规坐线性标轴外，还支持对数、时间序列等坐�
      mf = font_manager.FontProperties(fname="./uming.ttc") # 实例化字体
      xt_labels = ["10点{}分".format(i) for i in range(60)]
      xt_labels += ["11点{}分".format(i) for i in range(60)]
-     plt.xticks(list(range(120))[::4],xt_labels[::4],rotation=-45,fontproperties=yf) # 将标签字符列表映射的数值列表 
+     plt.xticks(list(range(120))[::4],
+              xt_labels[::4],rotation=-45,
+              fontproperties=yf) # 将标签字符列表映射的数值列表 
     ```
 -  get_xticks, get_xticklabels, set_xticks, set_xticklabels: Axes方法；获取x轴刻度及标签，设置x轴刻度及标签。类似使用xticks设置刻度及标签，set_*方法可以设置主副刻度。
+- 其他自动范围：locator_params,autoscale,Axes.autoscale_view
 
 2. 坐标轴位置、双坐标轴
 - set_ticks_position,spines: `set_ticks_position`是XAxis、Yxais的方法用于设置坐标刻度及便签的位置；[`spines`](https://matplotlib.org/api/spines_api.html?highlight=spines)`是表示绘图区域的上、下、左、右边界的类，`Axes.spines`可以获取Axes的四个`Spine` ，
@@ -368,9 +371,20 @@ matplotlib除了常规坐线性标轴外，还支持对数、时间序列等坐�
 - twinx,twiny: 创建第二的x、y轴；`pyplot.twinx(ax=None)`,`Axes.twinx()`;
 
 3. 时间序列  
-plot_date
+在对时间序列处理时使用[plot_date](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot_date.html#matplotlib.axes.Axes.plot_date)可以轻松的绘制出含有时间刻度的图形，plot_date的使用方法与plot类似,不过plot_date能将数值类型的x、y值解释为时间序列。
+   
+    ```python
+    plot_date(x, y, fmt='o', tz=None, xdate=True, ydate=False)
+    # tz:表示时区的字符串或tzinfo类，如果是None,则使用` rcParams["timezone"]`的设置(default: 'UTC').
+    # xdate: 是否将x轴解释为Matplotlib dates
+    # ydate: 是否将y轴解释为Matplotlib dates
+    ```
+    Matplotlib 使用浮点数表示自0001-01-01 UTC以来的天数。如，对于`x=[10,20,30], y=[2,5,3]`,plot()与plot_date的区别:  
+    ![JuaZ7D.png](https://s1.ax1x.com/2020/04/19/JuaZ7D.png)
+
+此外，matplotlib还有dates模块可以用于时间处理，该模块是基于datetime、dateutil实现，借助该模块可以实现更丰富的时间轴设置。
 locator_params()
-https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot_date.html#matplotlib.axes.Axes.plot_date
+
 https://blog.csdn.net/helunqu2017/article/details/78736686
 4. 对数轴  
 当数据跨越多个量级时，通常使用对数轴，在matplotlib中可以使用`plt.xsacle('log')`设置x轴为对数轴，还有`Axes.set_xsacle('log')`,`'log'`表示对数轴，`'linear'`表示线性轴，`'symlog'`、`'logit'`为其他形式的对数轴。`yscale`,`set_yscale`作用与y轴。自定义https://matplotlib.org/devel/add_new_projection.html#adding-new-scales
@@ -414,22 +428,22 @@ Matplotlib本身并不支持中文字体的显示，若要正常显示中文字�
    _font = mpl.font_manager.FontProperties(fname=font_path)
    plt.xlabel('时间',fontproperties=_font)
    ```
-```
+
 2. 全局设置，当前程序中所有图形字体  
 `matplotlib.rc()`用于设置当前rc参数，通过它可以设置字体的参数
-   ```python
-   ## 以下3种写法效果相同
-   font = {'family' : 'monospace',
-          'weight' : 'bold',
-          'size'   : 15}
-   matplotlib.rc('font', **font)  # 通过字典传入参数
-   #  关键字传参
-   matplotlib.rc('font', family='monospace',weight='bold',size=15)
-   # 修改rcParams
-   matplolib.rcParams['font.family']='monospace'
-   matplolib.rcParams['font.weight']='bold'
-   matplolib.rcParams['font.size']=15
-```
+    ```python
+    ## 以下3种写法效果相同
+    font = {'family' : 'monospace',
+           'weight' : 'bold',
+           'size'   : 15}
+    matplotlib.rc('font', **font)  # 通过字典传入参数
+    #  关键字传参
+    matplotlib.rc('font', family='monospace',weight='bold',size=15)
+    # 修改rcParams
+    matplolib.rcParams['font.family']='monospace'
+    matplolib.rcParams['font.weight']='bold'
+    matplolib.rcParams['font.size']=15
+    ```
    family：字体名称；font.style：字体风格，如 'normal','itaic'；font.size 字体大小。
     一些常见字体：
 
@@ -447,7 +461,7 @@ Matplotlib本身并不支持中文字体的显示，若要正常显示中文字�
 其他绘图工具:    
 - [Seaborn](http://seaborn.pydata.org/): Seaborn是一个基于matplotlib的Python数据可视化库。它提供易于使用的高级接口，可以方便绘制`概率分布图(displot )`,  `密度分布图(kdeplot)`, `联合分布图(joinplot)`, `箱线图(boxplots)`, `回归图(lmplot)`, `热力图( heatmap)`等许多信息丰富的图形；
 - [altair](https://altair-viz.github.io/): Declarative statistical visualization library for Python;     
-- [`plotly`](https://plotly.com/python/getting-started/#initialization-for-offline-plotting): plotly是一个交互式的开源绘图库，它支持40多种独特的图表类型;  
+- [plotly](https://plotly.com/python/getting-started/#initialization-for-offline-plotting): plotly是一个交互式的开源绘图库，它支持40多种独特的图表类型;  
 - [Echart](https://www.echartsjs.com/zh/index.html): 使用JavaScript实现的开源数据可视化框架，Python可以通过模块[`pyecharts`](http://pyecharts.org/#/)来调用Echart。  
 
 ---
