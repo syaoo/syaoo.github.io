@@ -15,4 +15,6 @@ for i in range(1,1000000000):
     if binascii.crc32(str(i).encode("utf-8")) == 0xc2dfa687: #c2dfa687 -> 326480710 # 6d8daf80
         print(i)
 http://comment.bilibili.com/cid.xml
+https://api.bilibili.com/x/v2/dm/history?type=1&oid=185162869&date=2020-04-30
+https://api.bilibili.com/x/v1/dm/list.so?oid=185137518
 http://articles.kevinz.cn/2017/12/20/sender/
