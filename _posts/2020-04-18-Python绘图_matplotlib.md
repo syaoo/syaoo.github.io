@@ -471,8 +471,8 @@ Matplotlib本身并不支持中文字体的显示，若要正常显示中文字�
 [Python 数据分析与展示(北京理工大学 )](https://www.bilibili.com/video/BV1Sx411U7R9)  
 [Python数据可视化分析 matplotlib教程](https://www.bilibili.com/video/av6989413)  
 
-
-Python+Matplotlib制作动画 - EndlessCoding - 博客园: https://www.cnblogs.com/endlesscoding/p/10308111.html
+Python+Matplotlib制作动画 - EndlessCoding - 博客园: https://www.cnblogs.com/endlesscoding/p/10308111.html 
+https://mp.weixin.qq.com/s/pu5k6HoAdL6RU1cffVB0nA
 
 [^1]: [Usage Guide — Matplotlib 3.2.1 documentation](https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py)
 
