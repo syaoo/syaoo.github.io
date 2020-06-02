@@ -86,6 +86,28 @@ shadowsocks/shadowsocks-android: https://github.com/shadowsocks/shadowsocks-andr
 命令行客户端：ss-local(shadowsocks-libev内置)、sslocal(shadowsocks内置)
 上面几种客户端图形界面一般使用都比较简单，命令行还需有一些额外的设置。
 #### ss-local配置
+
+ss-local的配置文件(/etc/shadowsocks-libev/config.json)与ss-server配置差不多，把server改为服务器地址即可。
+   ```bash
+ {
+ "server":"server_ip",
+ "server_port":your_server_port, # 服务器使用端口
+ "local_address":"127.0.0.1",
+ "local_port":1080,
+ "password":"your_server_passwd",  # 连接密码
+ "timeout":300,
+ "method":"aes-256-gcm" # 此外其他多种加密方式可选，如：
+ # aes-128-gcm, aes-192-gcm, chacha20-ietf-poly1305, xchacha20-ietf-poly1305
+ }
+   ````
+Shadowsocks-libev安装后默认会以服务的形式自动运行ss-server，可以通过将`/lib/systemd/system/shadowsocks-libev.service`文件中的`ExecStart=/usr/bin/ss-server -c $CONFFILE $DAEMON_ARGS`改为`ExecStart=/usr/bin/ss-local -c $CONFFILE $DAEMON_ARGS`来实现自动运行ss-local。
+   ```bash
+   #重新加载shadowsocks-libev.service
+   sudo systemctl daemon-reload
+   #启动shadowsocks-libev.service，此时启动为客户端ss-local
+   sudo systemctl start shadowsocks-libev.service
+   ```
+   
 #### 系统代理设置
 在系统设置-网络-网络代理可以进行代理设置，其中有自动与手动选项，前者可以借助pac文件实现仅对外网进行代理（pac模式），而后者则会对所以网站使用代理（全局模式）。（在测试中发现，在不能实现Terminal外网访问。）
 1、全局模式
