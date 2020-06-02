@@ -76,86 +76,36 @@ sudo systemctl restart shadowsocks-libev.service
 
 ## 客户端
 
-### windows使用
+Windows与Android系统客户端使用比较方便，直接从github上下载安装相应的客户端即可。iOS上在国内Appstore上目前应该没有可以下载的客户端，在美区似乎有shadowrocket可以下载使用。linux上图形化、命令行客户端，不过使用起来没有Win、Android上方便。
+### windows
 shadowsocks/shadowsocks-windows: https://github.com/shadowsocks/shadowsocks-windows/releases
 ### Android	
 shadowsocks/shadowsocks-android: https://github.com/shadowsocks/shadowsocks-android/releases
-### Linux使用
-图形化客户端：outline-client，electron-ssr
-cli：ss-local(shadowsocks-libev包含的客户端命令)
-#### 说明
-如果不需要终端走HTTP上网，仅仅需要浏览器代理上网的话，推荐使用[SwitchyOmega](https://www.switchyomega.com/)浏览器插件来管理代理上网，这个插件很强大、很灵活，配置起来也很简单，这里就不多做累述了。
-下面的步骤是配置全局使用HTTP代理。
+### Linux
+图形化客户端：[outline-client](https://github.com/Jigsaw-Code/outline-client)（全平台通用，但是只能全局使用）、[electron-ssr](https://github.com/qingshuisiyuan/electron-ssr-backup)（已停止维护）、[shadowsocks-qt5](https://github.com/shadowsocks/shadowsocks-qt5)（已停止维护）
+命令行客户端：ss-local(shadowsocks-libev内置)、sslocal(shadowsocks内置)
+上面几种客户端图形界面一般使用都比较简单，命令行还需有一些额外的设置。
+#### ss-local配置
+#### 系统代理设置
+在系统设置-网络-网络代理可以进行代理设置，其中有自动与手动选项，前者可以借助pac文件实现仅对外网进行代理（pac模式），而后者则会对所以网站使用代理（全局模式）。（在测试中发现，在不能实现Terminal外网访问。）
+1、全局模式
+这里的socks host是配置文件中的`local_address`本地地址,端口为配置文件中`local_port`,一般为1080。
+![tt6KvF.png](https://s1.ax1x.com/2020/06/02/tt6KvF.png)
+*通常启动ss-local，设置好代理后就可以正常使用了，但是我在Ubuntu 20 虚拟机中测试始终无法正常上网，然而在firefox浏览器中做同样的代理设置却可以正常使用，不知是何原因。*
 
-## Privoxy篇 -- 将Socks5转换为HTTP代理
-1. 使用`sudo apt install privoxy`安装
+2、pac模式
+![tt6n3T.png](https://s1.ax1x.com/2020/06/02/tt6n3T.png)
+如图，在url中填入pac文件路径，即可启用pac模式。pac文件可以使用genpac生成。
+   ```bash
+    # 安装
+    sudo pip3 install genpac
+    # 生成pac文件
+    genpac --pac-proxy "SOCKS5 127.0.0.1:1080" --output="autoproxy.pac" --gfwlist-url="https://pagure.io/gfwlist/raw/master/f/gfwlist.txt" --user-rule-from="user-rules.txt"
+   ```
+   genpac参数中，--output指定pac文件，如这里是当前目录下的autoproxy.pac，然后在代理设置中填写的url地址为“file:///home/user/.shadowsocks/pac/autoproxy.pac“，--user-rule-from指定的自定义规则文件，该文件中可以添加自己的规则，规则修改后需要重新生成pac文件才能生效。  
+   关于genpac的更多内容及gfwlist可以参加这两个repo：https://github.com/JinnLynn/genpac、https://github.com/gfwlist/gfwlist；自定义规则可以参考这里：https://adblockplus.org/en/filter-cheatsheet
 
-2. 编辑配置文件`/etc/privoxy/config`  
-找到 `listen-address` 改为 `listen-address 127.0.0.1:端口号` 
-找到 `forward-socks5` 确保有这行代码并且打开注释(没有自己加)` forward-socks5 / 127.0.0.1:1080 .`
-在文件末尾加上`actionsfile gfwlist.action`（等会就知道这个文件是干嘛用的了）
-
-3. 启动privoxy
-    ```bash
-    sudo service privoxy start
-    sudo service privoxy status
-    ```
-    配置环境变量，让终端也能走代理，全局环境变量位置`/ect/profile`,用户环境变量位置` ~/.bash_profile`,`~/.bashrc`文件末尾处都添加上以下内容
-    ```bash
-    proxy="http://127.0.0.1:端口"
-    export https_proxy=$proxy
-    export http_proxy=$proxy
-    export ftp_proxy=$proxy
-    ```
-### 使用PAC
-
-安装 GFWList2Privoxy
-
- ```bash
- pip install --user gfwlist2privoxy
- ```
-获取gfwlist文件，生成actionsfile
- ```bash
- cd /tmp
- wget https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
- ~/.local/bin/gfwlist2privoxy -i gfwlist.txt -f gfwlist.action -p 127.0.0.1:1080 -t socks5
- sudo cp gfwlist.action /etc/privoxy/
- ```
-重启Privoxy，测试代理是否走了pac模式
-
- ```bash
- curl www.google.com	#测试谷歌是否可以访问
- curl "http://pv.sohu.com/cityjson?ie=utf-8" #测试是否应用pac
- ```
-
-## 开机自启
-方法一、编辑rc.loacl。
-
-方法二、init.d
-1. 创建启动脚本,并修改脚本权限为755
-    ```bash
-    #!/bin/bash
-    sslocal -c /etc/shadowsocks.json -d start
-    ```
-2. 将脚本放置在`/etc/init.d`中
-
-4.将脚本添加到启动脚本。
-    ```bash
-    # 在这里`90`表明一个优先级，越高表示执行的越晚
-    cd /etc/init.d/
-    sudo update-rc.d shadowsocks.sh default 90
-    ```
-#### 配置代理
-系统设置-网络-网络代理，设置socks5代理；自动为全局代理、手动可以设置PAC。
-#### PAC模式
- ```
- # 安装
- sudo apt install genpac
- # 启动
- genpac --proxy="SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCK5 127.0.0.1:1080" -o autoproxy.pac --gfwlist-url="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
- ```
-
-#### Oracle Cloud
+## Oracle Cloud
 
 https://wzfou.com/oracle-ip-root/
 
@@ -165,5 +115,7 @@ https://wzfou.com/oracle-ip-root/
 [一键脚本搭建ss 一键脚本搭建ssr 一键开启bbr ss/ssr一键 - flyzy小站](https://www.flyzy2005.com/fan-qiang/shadowsocks/install-shadowsocks-in-one-command/#BBR)  
 [Shadowsocks-libev 服务端的部署](https://cokebar.info/archives/767)  
 [shadowsocks/shadowsocks-libev: libev port of shadowsocks] (https://github.com/shadowsocks/shadowsocks-libev)  
+[Ubuntu配置Shadownsocks以及配置pac规则 | 雾非雾的情思](https://www.mspring.org/2018/11/17/Ubuntu%E9%85%8D%E7%BD%AEShadownsocks%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AEpac%E8%A7%84%E5%88%99/)
+
 
 [^1]: [Shadowsocks - Servers](https://shadowsocks.org/en/download/servers.html)
