@@ -141,7 +141,7 @@ comments:
     app_key     : 9wB5tpDn65aRRhA3CcaeNAgl # LeanCloud App key
     placeholder : '测试一下' # Prompt information
     visitor     : true # false (default)
-    meta        : "[nick, mail]" # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
+    meta        : ['nick', 'mail'] # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
     avatar      : retro
     requiredFields: ['nick','mail'] #设置必填项，默认[]，可选值：['nick','mail'], ['nick']
 
