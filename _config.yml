@@ -143,7 +143,7 @@ comments:
     visitor     : true # false (default)
     avatar      : retro
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
-    requiredFields: [nick]
+    requiredFields: ["nick"]
     emojiCDN    : 'https://i0.hdslb.com/bfs/emote/'
 
 
