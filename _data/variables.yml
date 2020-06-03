@@ -34,7 +34,7 @@ default:
     show_subscribe: false
     full_width: false
     sharing: false
-    comment: false
+    comment: true
     license: false
     pageview: false
     search: default
