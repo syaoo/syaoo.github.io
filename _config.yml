@@ -139,12 +139,12 @@ comments:
   valine:
     app_id      : rsADNXqPaX7DJl4uqhta39mp-MdYXbMMI # LeanCloud App id
     app_key     : 9wB5tpDn65aRRhA3CcaeNAgl # LeanCloud App key
-    placeholder : "yes" # Prompt information
+    placeholder : yes # Prompt information
     visitor     : true # false (default)
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
     recordIP    : true
     avatar      : retro
-    requiredFields: ['nick','mail'] #设置必填项，默认[]，可选值：['nick','mail'], ['nick']
+    requiredFields: [nick,mail] #设置必填项，默认[]，可选值：['nick','mail'], ['nick']
 
 ## => Pageview
 ##############################
