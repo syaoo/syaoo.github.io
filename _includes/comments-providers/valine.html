@@ -38,7 +38,7 @@
       _config.visitor = 'true';
     {%- endif -%}
     {%- if _VALINE_META -%}
-      _config.meta = '{{ _VALINE_META}}';
+      _config.meta = {{ _VALINE_META}} | split: ',';
     {%- endif -%}
     new Valine(_config);
   });
