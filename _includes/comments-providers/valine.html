@@ -47,10 +47,10 @@
       _config.requiredFields = {{ _VALINE_REQUIRED}};
     {%- endif -%}
     {%- if _VALINE_AVATAR -%}
-      _config.avatar = {{ _VALINE_AVATAR}};
+      _config.avatar = '{{ _VALINE_AVATAR}}';
     {%- endif -%}
     {%- if _VALINE_RECORDIP -%}
-      _config.recordIP = {{ _VALINE_RECORDIP}};
+      _config.recordIP = '{{ _VALINE_RECORDIP}}';
     {%- endif -%}
     new Valine(_config);
   });
