@@ -144,6 +144,7 @@ comments:
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
     recordIP    : true
     avatar      : retro
+    requiredFields: ['nick','mail'] #设置必填项，默认[]，可选值：['nick','mail'], ['nick']
 
 ## => Pageview
 ##############################
