@@ -6,6 +6,7 @@
 {%- assign _VALINE_PLACEHOLDER = site.comments.valine.placeholder -%}
 {%- assign _VALINE_VISITOR = site.comments.valine.visitor -%}
 {%- assign _VALINE_META = site.comments.valine.meta -%}
+{%- assign _VALINE_REQUIRED = site.comments.valine.requiredFields -%}
 
 
 {%- if _VALINE_APP_ID and
@@ -39,6 +40,9 @@
     {%- endif -%}
     {%- if _VALINE_META -%}
       _config.meta = {{ _VALINE_META}};
+    {%- endif -%}
+    {%- if _VALINE_REQUIRED -%}
+      _config.requiredFields = {{ _VALINE_REQUIRED}};
     {%- endif -%}
     new Valine(_config);
   });
