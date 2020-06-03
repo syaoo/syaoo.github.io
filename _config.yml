@@ -141,10 +141,7 @@ comments:
     app_key     : 9wB5tpDn65aRRhA3CcaeNAgl # LeanCloud App key
     placeholder : # Prompt information
     visitor     : true # false (default)
-    avatar      : retro
-    meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
-    requiredFields: ["nick"]
-    emojiCDN    : 'https://i0.hdslb.com/bfs/emote/'
+    meta        : [nick, mail] # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
 
 
 ## => Pageview
