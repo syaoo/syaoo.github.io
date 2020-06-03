@@ -142,7 +142,7 @@ comments:
     placeholder : # Prompt information
     visitor     : true # false (default)
     avatar      : 'retro'
-    meta        : ['nick', 'mail']
+    meta        : [nick, mail]
     emojiCDN    : 'https://i0.hdslb.com/bfs/emote/'
 
 
