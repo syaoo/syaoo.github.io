@@ -143,6 +143,8 @@ comments:
     visitor     : true # false (default)
     meta        : "['nick','mail','link']" # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
     requiredFields: "['nick','mail']" # "[]" (default) opt "['nick']", "['nick','mail']"
+    avatar      : 'robohash' # set Avatar (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+    recordIP    : true # false (default), record commenter IP
 
 
 ## => Pageview

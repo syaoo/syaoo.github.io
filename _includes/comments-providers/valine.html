@@ -7,6 +7,9 @@
 {%- assign _VALINE_VISITOR = site.comments.valine.visitor -%}
 {%- assign _VALINE_META = site.comments.valine.meta -%}
 {%- assign _VALINE_REQUIRED = site.comments.valine.requiredFields -%}
+{%- assign _VALINE_AVATAR = site.comments.valine.avatar -%}
+{%- assign _VALINE_RECORDIP = site.comments.valine.recordIP -%}
+
 
 
 {%- if _VALINE_APP_ID and
@@ -26,7 +29,6 @@
       appId:  '{{ _VALINE_APP_ID }}',
       appKey: '{{ _VALINE_APP_KEY }}',
       verify: true,
-      avatar:'robohash', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide) 
     };
     {%- if _VALINE_PLACEHOLDER -%}
       _config.placeholder = '{{ _VALINE_PLACEHOLDER }}';
@@ -43,6 +45,12 @@
     {%- endif -%}
     {%- if _VALINE_REQUIRED -%}
       _config.requiredFields = {{ _VALINE_REQUIRED}};
+    {%- endif -%}
+    {%- if _VALINE_AVATAR -%}
+      _config.avatar = {{ _VALINE_AVATAR}};
+    {%- endif -%}
+    {%- if _VALINE_RECORDIP -%}
+      _config.recordIP = {{ _VALINE_RECORDIP}};
     {%- endif -%}
     new Valine(_config);
   });
