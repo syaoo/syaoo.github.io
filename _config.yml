@@ -139,8 +139,9 @@ comments:
   valine:
     app_id      : rsADNXqPaX7DJl4uqhta39mp-MdYXbMMI # LeanCloud App id
     app_key     : 9wB5tpDn65aRRhA3CcaeNAgl # LeanCloud App key
-    placeholder : '测试一下' # Prompt information
+    placeholder : # Prompt information
     visitor     : true # false (default)
+    avatar      : 'retro'
     emojiCDN    : 'https://i0.hdslb.com/bfs/emote/'
 
 
