@@ -4,22 +4,22 @@
 
 1. 在Ubuntu系统上使用apt安装（Debian应该也可以）
    
-    ```bash
-    sudo apt update
-    sudo apt install shadowsocks-libev
-    # 服务端命令ss-server
-    # 客户端命令ss-local
-    # 另外还有一个shadowsocks,与下面pip安装的一样，已经停止更新版本不建议使用
-    ```
+```bash
+sudo apt update
+sudo apt install shadowsocks-libev
+# 服务端命令ss-server
+# 客户端命令ss-local
+# 另外还有一个shadowsocks,与下面pip安装的一样，已经停止更新版本不建议使用
+```
 2. 使用Python:shadowsocks-python  
    
-    ```bash
-    # 需要Python2.6或2.7, Python3也可以但是要修改一个文件
-    sudo pip install shadowsocks
-    sudo ln -s /usr/local/python/bin/sslocal /usr/bin/sslocal  #不是必须
-    # 服务端命令ssserver
-    # 客户端命令sslocal
-    ```
+```bash
+# 需要Python2.6或2.7, Python3也可以但是要修改一个文件
+sudo pip install shadowsocks
+sudo ln -s /usr/local/python/bin/sslocal /usr/bin/sslocal  #不是必须
+# 服务端命令ssserver
+# 客户端命令sslocal
+```
 
 
 ## 服务端配置
@@ -99,7 +99,7 @@ ss-local的配置文件(/etc/shadowsocks-libev/config.json)与ss-server配置差
  "method":"aes-256-gcm" # 此外其他多种加密方式可选，如：
  # aes-128-gcm, aes-192-gcm, chacha20-ietf-poly1305, xchacha20-ietf-poly1305
  }
-   ````
+````
 Shadowsocks-libev安装后默认会以服务的形式自动运行ss-server，可以通过将`/lib/systemd/system/shadowsocks-libev.service`文件中的`ExecStart=/usr/bin/ss-server -c $CONFFILE $DAEMON_ARGS`改为`ExecStart=/usr/bin/ss-local -c $CONFFILE $DAEMON_ARGS`来实现自动运行ss-local。
    ```bash
    #重新加载shadowsocks-libev.service
@@ -107,7 +107,7 @@ Shadowsocks-libev安装后默认会以服务的形式自动运行ss-server，可
    #启动shadowsocks-libev.service，此时启动为客户端ss-local
    sudo systemctl start shadowsocks-libev.service
    ```
-   
+
 #### 系统代理设置
 在系统设置-网络-网络代理可以进行代理设置，其中有自动与手动选项，前者可以借助pac文件实现仅对外网进行代理（pac模式），而后者则会对所以网站使用代理（全局模式）。（在测试中发现，在不能实现Terminal外网访问。）
 1、全局模式
