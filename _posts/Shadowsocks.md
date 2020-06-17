@@ -125,7 +125,7 @@ Shadowsocks-libev安装后默认会以服务的形式自动运行ss-server，可
     genpac --pac-proxy "SOCKS5 127.0.0.1:1080" --output="autoproxy.pac" --gfwlist-url="https://pagure.io/gfwlist/raw/master/f/gfwlist.txt" --user-rule-from="user-rules.txt"
    ```
    genpac参数中，--output指定pac文件，如这里是当前目录下的autoproxy.pac，然后在代理设置中填写的url地址为“file:///home/user/.shadowsocks/pac/autoproxy.pac“，--user-rule-from指定的自定义规则文件，该文件中可以添加自己的规则，规则修改后需要重新生成pac文件才能生效。  
-   关于genpac的更多内容及gfwlist可以参加这两个repo：https://github.com/JinnLynn/genpac、https://github.com/gfwlist/gfwlist；自定义规则可以参考这里：https://adblockplus.org/en/filter-cheatsheet
+   关于genpac的更多内容及gfwlist可以参加这两个repo：https://github.com/JinnLynn/genpac、https://github.com/gfwlist/gfwlist；自定义规则可以参考这里：https://adblockplus.org/en/filter-cheatsheet。另外[gfwlist2pac](https://pypi.org/project/gfwlist2pac/)也可以生成pac文件。
 
 ## Oracle Cloud
 

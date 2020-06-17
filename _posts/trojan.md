@@ -9,7 +9,8 @@ article_header:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
     src: /assets/images/cover1.jpg
 ---
-abstract
+
+三种方法：ShadowSocks、trojan、SSH tunnel（ssh -N -D 127.0.0.1:1088 test@52.221.60.138 -p997）
 <!--more-->
 
 1、服务端
