@@ -1,6 +1,6 @@
 ---
 title: Ubuntu远程连接-Xrdp
-tag: ['tag1','tag2']
+tag: ['Ubuntu','Xrdp','远程桌面']
 article_header:
   type: overlay
   theme: dark
