@@ -1,7 +1,8 @@
 #!/bin/bash
 # 此程序用於自動創建一個文章框架，
 # 包含文章的yaml頭信息，摘要，正文以及參考文獻四部分。
-
+# v1.0
+# 下一步计划加入对background_image的选择、及其他Yaml头信息的丰富
 # ----------------------------------------
 # 寫入函數
 front(){
@@ -99,3 +100,5 @@ abstract $fname
 context $fname
 refer $fname
 echo "done!"
+# echo "Open file with SublimeText"
+# subl $fname
