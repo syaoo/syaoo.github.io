@@ -69,26 +69,22 @@ fi
 if test -e $fname
 then
     typeset -u yon # 設置變量you值爲大寫，-l爲小寫
-    read -p "File $fname already exists, overwrite or not?[Y(yes)/N(no)]" yon
-    if test $yon = 'Y'
+    read -p "File $fname already exists, overwrite or not?[Y/N(default)]" yon
+    if [[ $yon = 'Y' ]]
+    # 使用`[[ ]]`避免当yon为空时出现`=: unary operator expected`错误
     then
-        echo "yon=Y"
-        rm $fname
-    elif test $yon = 'YES'
-    then
-        echo "yon=yes"
         rm $fname
     else
         echo "abort!!!"
         exit 1
-        echo "ab"
     fi
 fi
 
 title=${fname/.md/}
 typeset -u yon # 設置變量you值爲大寫，-l爲小寫
-read -p "Use <<$title>> as article title?[Y(yes)/N(no)]" yon
-if ! [ \( $yon = 'Y' \) -o \( $yon = 'YES' \) ]
+read -p "Use <<$title>> as article title?[Y/N(default)]" yon
+# if ! [ \( $yon = 'N' \) -o \( -z $yon \) ]
+if [[ $yon != 'Y' ]]
 then
     read -p "Input article title: " title
 fi
