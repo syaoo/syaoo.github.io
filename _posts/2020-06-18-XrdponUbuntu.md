@@ -10,7 +10,7 @@ article_header:
     src: /assets/images/cover2.jpg
 ---
 
-abstract
+使用Xrdp作为Ubuntu远程桌面的服务端，相比于VNCserver，Xrdp配置更简单、兼容性更好，基本安装上就可以使用，连接效率也不差。
 
 <!--more-->
 
