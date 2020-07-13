@@ -272,7 +272,16 @@ boxplot用于绘制箱线图，会返回一个包含boxes、medians、whiskers�
 除了上面介绍的较为常用的绘图函数外，matplotlib还有polar、psd()、specgram()、cohere()、step()等更多绘图函数。
 
 ### 样式设置
-通常个函数画出图像后会有一个默认的样式，matplotlib有多种[内置样式](https://matplotlib.org/gallery/style_sheets/style_sheets_reference.html)，可以使用`matplotlib.style.available`查看可用样式，使用`matplotlib.style.use('样式名')`修改默认样式。当然，默认样式通常不能满足需要，为让图像能更好的传达信息，让图像更美观，还需要对图表样式做一定的调整。
+通常个函数画出图像后会有一个默认的样式，matplotlib有多种[内置样式](https://matplotlib.org/gallery/style_sheets/style_sheets_reference.html)，可以使用`matplotlib.style.available`查看可用样式，使用`matplotlib.style.use('样式名')`修改默认样式，不同的样式可以相互组合`plt.style.use(['dark_background', 'bmh'])` 。当然，默认样式通常不能满足需要，为让图像能更好的传达信息，让图像更美观，还需要对图表样式做一定的调整。
+
+也可以使用临时样式：
+```python
+# 样式只在with代码块起作用
+with plt.style.context(['dark_background', 'bmh']):
+    plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
+plt.show()
+```
+
 #### 网格、图例、标题，轴标签
 1. [grid](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.grid.html?highlight=grid#matplotlib.axes.Axes.grid)  
 `grid( b=None, which='major', axis='both', |*|*kwargs)`控制坐标网格的显示及样式，当所有参数缺省时表示切换网格的可见性。which：{'major', 'minor', 'both'}指定网格类型主网格、副网格或者二者都有，axis：{'both', 'x', 'y'}指定x、y轴方向的网格。其他参数color,linestyle, linewidth等。
