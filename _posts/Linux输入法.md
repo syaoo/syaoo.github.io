@@ -10,11 +10,15 @@ article_header:
     src: /assets/images/cover0.jpg
 ---
 
-RIME／中州韵输入法引擎，是一个跨平台的输入法算法框架。
+[RIME／中州韵](https://rime.im/)输入法引擎，是一个跨平台的输入法算法框架；[小小输入法](http://yongim.ys168.com/)是一个跨平台，可高度自由定制的输入法；[百度](https://srf.baidu.com/site/guanwang_linux/index.html)、[搜狗](https://pinyin.sogou.com/linux/?r=pinyin)输入法仅支持Debian系，如Ubuntu、Deepin、UOS等。
 
 <!--more-->
+
+## RIME
+
 CentOS 8 安装
 在安装过程中如遇到某些库缺失的情况可根据提示查找，安装
+
 1. librimels
 
 2. 
@@ -45,6 +49,10 @@ error: Failed dependencies:
 	brise >= 0.35 is needed by ibus-rime-1.4.0-3.fc32.x86_64
 	librime.so.1()(64bit) is needed by ibus-rime-1.4.0-3.fc32.x86_64
 ```
+
+## 小小输入法
+
+## 百度、搜狗输入法
 
 ---
 
