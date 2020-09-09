@@ -1,9 +1,10 @@
 %%% 功率谱能量谱
 clf
 clear
-%if strfind(version,'R')==[]
-%  pkg load signal % 在Octave中需要先载入signal模块才能使用boxcar
-%end
+if isempty(strfind(version,'R'))
+  1
+  pkg('load', 'signal') % 在Octave中需要先载入signal模块才能使用boxcar
+end
 randn('seed',1)
 S = @(t) 3*sin(2*pi*15*t-pi/5) ...
     + 7*cos(2*pi*100*t-pi/4)+randn(size(t)); % 信号函数
