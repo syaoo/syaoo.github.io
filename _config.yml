@@ -36,7 +36,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 author:
   type      : # "person" (default), "organization"
   name      : 瓜瓜gxgx
-  url       :
+  url       : https://syaoo.github.io
   avatar    : # path or url of avatar image (square)
   bio       : 充满好奇，但缺乏常性
   email     :
