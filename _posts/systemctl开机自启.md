@@ -13,9 +13,24 @@ article_header:
 abstract
 
 <!--more-->
-context
 
----
+## 命令使用
+
+```
+systemctl enable nginx # 开机启动
+systemctl is-enabled nginx # 查看服务是否开机启动
+systemctl disable nginx  # 关闭开机启动
+systemctl start nginx  # 启动服务
+systemctl stop nginx # 停止服务
+systemctl restart nginx # 重启服务
+systemctl status nginx # 查看服务状态(详细信息)
+systemctl is-active nginx # 查看服务是否活动
+systemctl kill nginx # 结束服务进程(服务无法停止时)
+systemctl daemon-reload # 添加或修改配置文件后，使改动生效
+systemctl --failed # 查看启动失败的服务
+```
+
+
 
 **参考**
 1. [Systemd 添加自定义服务(开机自启动) - 江湖小小白 - 博客园](https://www.cnblogs.com/jhxxb/p/10654554.html)
