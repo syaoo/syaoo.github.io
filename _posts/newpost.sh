@@ -19,10 +19,11 @@ front(){
         title=$2
     fi
     f1="title: $title\ntag: ['tag1','tag2']\narticle_header:\n"
-    f2="${bs}type: overlay\n${bs}theme: dark\n${bs}background_color: '#203028'\n${bs}background_image:\n"
-    f3="${bs2}gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'\n"
-    f4="${bs2}src: /assets/images/cover0.jpg"
-    echo -e "$f1$f2$f3$f4" >> $1
+    f2="mathjax: false\n"
+    f3="${bs}type: overlay\n${bs}theme: dark\n${bs}background_color: '#203028'\n${bs}background_image:\n"
+    f4="${bs2}gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'\n"
+    f5="${bs2}src: /assets/images/cover0.jpg"
+    echo -e "$f1$f2$f3$f4$f5" >> $1
     echo "---" >> $1
 }
 
