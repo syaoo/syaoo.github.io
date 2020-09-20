@@ -183,8 +183,12 @@ Description=文件服务器
 After=network.target
 Wants=nginx.service # 该nginx用于端口转发，所有要启动nginx，但不是必须
 [Service]
-ExecStart=-/etc/gossa/start-gossa # 连词号（-），表示"抑制错误"，即发生错误的时候，不影响其他命令的执行
-ExecStop=-/etc/gossa/stop-gossa
+# 使用环境变量
+Environment=SHARE_DIR=/home/vgos/hdisk/share
+ExecStart=/usr/local/etc/gossa/gossa-linux64 -h "0.0.0.0" $SHARE_DIR
+# 不使用环境变量
+#ExecStart=/usr/local/etc/gossa/gossa-linux64 -h "0.0.0.0" /home/vgos/hdisk/share
+ExecReload=/bin/kill -HUP $MAINPID
 [Install]
 WantedBy=multi-user.target
 ```
