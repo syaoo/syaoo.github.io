@@ -1,8 +1,8 @@
 ---
 title: MKOnlineMusicPlayer
 tag: ['web']
-article_header:
 mathjax: false
+article_header:
   type: overlay
   theme: dark
   background_color: '#203028'

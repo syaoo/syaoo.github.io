@@ -1,8 +1,8 @@
 ---
-title: Linux内核升级小记
+title: Linux内核升级
 tag: ['Linux']
-article_header:
 mathjax: false
+article_header:
   type: overlay
   theme: dark
   background_color: '#203028'
