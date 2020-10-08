@@ -3,6 +3,9 @@
 # 包含文章的yaml頭信息，摘要，正文以及參考文獻四部分。
 # v1.0
 # 下一步计划加入对background_image的选择、及其他Yaml头信息的丰富
+# v1.01 
+# 更新：随机background_image，更变yaml头字符串组织方式；
+# TODO：增加自定义选项
 # ----------------------------------------
 # 寫入函數
 front(){
@@ -11,6 +14,9 @@ front(){
     # 另、可加一個參數作爲文章標題
     bs="\040\040" #Octal ASCII code space
     bs2="\040\040\040\040"
+    pics=4 # number of pictures
+    sec=`date +%s`
+    num=`expr $sec % $pics` 
     echo "---" >> $1
     if test -e $2
     then
@@ -18,16 +24,17 @@ front(){
     else
         title=$2
     fi
-    f1="title: $title\ntag: ['tag1','tag2']\n"
-    f2="mathjax: false\n"
-    f3="$article_header:\n
-    {bs}type: overlay\n
-    ${bs}theme: dark\n
-    ${bs}background_color: '#203028'\n
-    ${bs}background_image:\n"
-    f4="${bs2}gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'\n"
-    f5="${bs2}src: /assets/images/cover0.jpg"
-    echo -e "$f1$f2$f3$f4$f5" >> $1
+    context="title: $title\n\
+tag: ['tag1','tag2']\n\
+mathjax: false\n\
+article_header:\n\
+${bs}type: overlay\n\
+${bs}theme: dark\n\
+${bs}background_color: '#203028'\n\
+${bs}background_image:\n\
+${bs2}gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'\n\
+${bs2}src: /assets/images/cover${num}.jpg"
+    echo -e $context >> $1
     echo "---" >> $1
 }
 
@@ -37,7 +44,7 @@ abstract(){
 }
 
 context(){
-    echo "context" >> $1
+    echo -e "\ncontext\n" >> $1
     echo -e "\n---\n" >> $1
 }
 
