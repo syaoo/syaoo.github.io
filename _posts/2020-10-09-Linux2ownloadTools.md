@@ -1,6 +1,6 @@
 ---
-title: Linux中的几款下载工具
-tag: ['Linux']
+title: linuxdow
+tag: ['tag1','tag2']
 mathjax: false
 article_header:
   type: overlay
@@ -53,25 +53,6 @@ abstract
    ```
 
 ## Curl
-
-Curl是另一款Linux上常用的下载工具，与wget类似同样支持多文件下载、断点续传等功能。
-
-1. 下载文件
-
-   ```shell
-   # 从文件地址下载文件并存为um.mp4
-   curl -o um.mp4 http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
-   # 以原始文件件名保存文件
-   curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4 
-   ```
-
-2. 多文件下载
-
-   ```shell
-curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_2mb.mp4 -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
-   ```
-
-
 
 ## Axel
 
