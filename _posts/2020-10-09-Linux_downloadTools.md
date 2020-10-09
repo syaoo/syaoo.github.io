@@ -71,9 +71,65 @@ Curl是另一款Linux上常用的下载工具，与wget类似同样支持多文�
 curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_2mb.mp4 -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
    ```
 
+## Aria2、Axel
 
+aria2是一种开源命令行下载加速器，支持多个端口，你可以使用最大带宽来下载文件，其支持Linux、win等多平台。axel也是一款加速下载器，可同时下载多个文件片段以提高下载速度。aria2的功能更为丰富，许多下载工具如Motrix都是基于aria2开发的。
 
-## Axel
+```shell
+# 安装aria2
+sudo apt install aria2
+# 下载文件
+aria2c http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4 
+# 安装axel
+sudo apt install axel
+# 下载文件
+axel http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
+```
+
+## 视频下载工具
+
+### Youtube-dl
+
+[youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html)是一款跨平台的视频下载工具，从名字可知其能够下载YouTube的视频，当然也支持其他[许多网站](https://github.com/ytdl-org/youtube-dl/tree/master/youtube_dl/extractor)的音视频下载；[这里](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#installation)有介绍各平台的安装方式，下面是Linux上的安装方法：
+
+```shell
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+# 使用pip安装
+pip install youtube_dl
+```
+
+视频下载
+
+```shell
+# B站视频下载, 可以-o参数指定下载文件的名称
+youtube-dl https://www.bilibili.com/video/BV1ii4y1j7ZE
+# 使用代理下载YouTube视频
+youtube-dl --proxy socks5://127.0.0.1:1099 "https://www.youtube.com/watch?v=4x678Pwpk6A"
+```
+
+### You-Get
+
+[you-get](https://github.com/soimort/you-get)与youtube-dl基本类似，不过似乎对国内网站的支持要更好。支持网站[列表](https://you-get.org/#supported-sites)。[安装](https://github.com/soimort/you-get#installation)也比较方便:
+
+```shell
+pip3 install you-get
+```
+
+视频下载：
+
+```shell
+# 下载腾讯视频
+you-get https://v.qq.com/x/page/a0864n9sxrx.html
+# 使用socks5代理下载视频，需要PySocks库
+you-get -s 127.0.0.1:1099 "https://www.youtube.com/watch?v=4x678Pwpk6A"
+# 下载网易云音乐歌曲
+you-get https://music.163.com/#/song?id=486999661
+```
+**[Movgrab](https://github.com/ColumPaget/Movgrab)**也是一款网络视频下载工具，只是好久没有更新了。
+
+## Torrent下载工具
+Linux的Torrent下载工具有[rtorrent](https://github.com/rakshasa/rtorrent)、ctorrent、[Transmission](https://transmissionbt.com/)等。
 
 
 ---
