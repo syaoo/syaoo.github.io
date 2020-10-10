@@ -1,5 +1,5 @@
 ---
-title: [译]Delta-DOR
+title: Delta-DOR相对差分单向测距[译]
 date: 2020-10-10 18:35
 tag: ['ΔDOR']
 mathjax: false
