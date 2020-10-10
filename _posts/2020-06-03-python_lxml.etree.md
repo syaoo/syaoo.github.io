@@ -1,0 +1,51 @@
+---
+title: lxml.etree中文乱码问题
+tag: ["lxml", "python"]
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /assets/images/cover3.jpg
+---
+
+使用lxml.etree处理含有中文档、字符串时，可能会中文字符不能正常显示的情况（通常显示为Unicode码，如：`&#36825;&#26159`），这里分别针对字符串和文档的处理给出了几种解决方安。
+<!--more-->
+
+### 处理字符串
+1、使用`html.unescape()`将字符引用（字符实体名称或编号：`&entity_name;`，`&entity_number;`,如，`&gt;`,` &#62;`,`&#x3e;`）转换为相应的字符实体；
+2、指定编码解码方式方式
+
+   ```python
+   from lxml import etree
+   import html
+   text = """this is test content;这是测试内容。"""
+   html1 = etree.HTML(text)
+   # html1 = etree.fromstring(text) # 同HTML()
+    
+   # 方法1 使用html.unescape()
+   res = etree.tostring(html1)
+   print(html.unescape(res.decode('utf-8')))
+   
+   # 方法2 使用uft-8编码
+   res = etree.tostring(html1,encoding="utf-8") # 这种方法对标签用的中文属性无效
+   print(res.decode('utf-8'))
+   ```
+
+### 处理文本文档
+1、使用open方法打开并读取文档，此可采用处理字符串相同的方法；
+2、使用etree.parse()读取文档时指定编码方式。
+
+   ```python
+   # 方法1 使用open读取文档做字符串处理
+   with open('test.html') as f:
+       html1 = etree.HTML(f.read())
+   # 之后代码同 处理字符串 的两种方法
+   
+   # 方法2 parse读取文档时指定编码方式
+   html1 = etree.parse('test.html',etree.HTMLParser(encoding='utf-8'))
+   # 这里要指定正确（与所读取文档相应的编码）的编码方式，不然后面会出现乱码
+   # 之后代码同 处理字符串 的两种方法
+   ```
+通常中文字符不能正常显示有两种情况，一种表现是显示为字符编码（如，`\xe8\xbf`、`&#36825;&#26159;`），另一种是乱码（如，`è¿ææµè¯å`），前者的问题在于没有解码，而后者则是字符串编码与解码方式不匹配，上面的方法基本可以解决xml解析中遇到的中文编码、乱码问题。如果中文字符出现在标签属性上时，需使用第一种方法才可以正常显示。
