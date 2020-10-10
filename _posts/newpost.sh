@@ -6,7 +6,7 @@
 # v1.01 
 # 更新：随机background_image，更变yaml头字符串组织方式；
 # v1.02
-# 添加 chart、mermaid设置
+# 添加 chart、mermaid等设置
 #
 # TODO：增加自定义选项
 
@@ -19,6 +19,7 @@ front(){
     bs="\040\040" #Octal ASCII code space
     bs2="\040\040\040\040"
     pics=4 # number of pictures
+    time=`date "+%Y-%m-%d %H:%M"`
     sec=`date +%s`
     num=`expr $sec % $pics` 
     echo "---" >> $1
@@ -29,12 +30,13 @@ front(){
         title=$2
     fi
     context="title: $title\n\
+date: ${time}\n\
 tag: ['tag1','tag2']\n\
 mathjax: false\n\
 mathjax_autoNumber: true\n\
-# Mermaid
+# Mermaid\n\
 mermaid: false\n\
-# Chart
+# Chart\n\
 chart: false\n\
 article_header:\n\
 ${bs}type: overlay\n\
