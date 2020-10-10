@@ -1,0 +1,53 @@
+---
+title: [译]Delta-DOR
+date: 2020-10-10 18:35
+tag: ['ΔDOR']
+mathjax: false
+mathjax_autoNumber: true
+# Mermaid
+mermaid: false
+# Chart
+chart: false
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: 'https://s1.ax1x.com/2020/10/10/0yXVaV.jpg'
+---
+
+Delta-DOR或ΔDOR（delta - Differential One-way Range，相对差分单向测距）是
+
+<!--more-->
+2005年欧空局（ESA）的第二个深空天线 Cebreros (DSA 2)正式投入使用，标志着ESA具备了开展Delta-DOR测量的能力。Delta-DOR是用于行星际深空探测器导航的一种重要的新技术。
+ESA的ΔDOR系统已经为2006年4月的金星快车（Venus Express）的成功入轨和2007年2月的罗塞塔探测器（Rosetta）火星近旁转向（Mars swingby）任务做出了重要贡献，并且将成为未来ESA各类行星际探测任务导航的基本工具。
+
+## 背景
+
+太阳系内探测器的常规导航依赖于两种跟踪方法:测距和双向多普勒。通过精确地测量无线电信号往返于探测器的时间，就可以得出与地面站的距离(“双向测距”，'two-way range')，同时测量信号的多普勒频移(由于发射机和接收机之间的相对运动而产生的频率的频移)，可以提供飞船沿该视距的速度(“距离变化率”，'range-rate')。
+在天空背景下的另外两个位置坐标，只能通过地球自转时地面站的运动间接获得。不过，这些位置分量只能推导出低得多的精度。通常，必须对探测器进行持续数天的跟踪，这需要对探测器运动进行非常精确的建模。
+
+![Artist's view of Rosetta passing asteroid Lutetia](https://s1.ax1x.com/2020/10/10/06psds.jpg)
+
+由西澳大利亚州的新诺尔恰（DSA 1），马德里附近的Cebreros（DSA 2）和阿根廷的Malargüe（DSA 3）三个深空站组成的35m跟踪系统提供了非常精确的测量结果。通常，测距随机误差约为1米，双向测速误差小于0.1mm/s。
+然而，上述限制意味着最终确定轨道的精度可能不够好，无法在任务的关键阶段，尤其是在着陆前接近行星执行近旁转向或入轨时进行导航。
+
+## Delta-DOR
+如今，ESA可以使用ΔDOR来增强传统跟踪测量的能力。NASA的深空网（Deep Space Network, DSN）从1980年起开始提供ΔDOR测量数据，并于1986年开始为ESA的探测器导航任务提供ΔDOR测量支持。
+用于行星际星际飞船导航的ΔDOR技术基于一个简单、有效的概念。它使用两个相距非常远的天线同时跟踪探测器，以接收其发射的信号，从而测量信号到达两天线的时间差（延迟时间），即时，测量这种延迟的的技术被称为差分单向测量（DOR，Differential One-way Range）。理论上，延迟只取决于两天线和航天器的几何位置，然而在实际测量中，延迟还会受到信号传播遇到的如对流层、电离层和太阳等离子体等影响，以及地面时钟的不稳定性等多方面的影响。
+![Delta-DOR is used to precisely locate spacecraft](https://s1.ax1x.com/2020/10/10/06C62V.png)
+
+## 类星体：明亮的灯塔
+
+ΔDOR通过跟踪一个靠近探测器方向的类星体（活动星系核）来修正这些误差。这些类星体的方向已经通过天文观测进行了精确的测量，通常精度在500亿分之一度（纳弧度）。类星体通常在探测器方向10°范围内，因此这两个源通过地球大气层的信号路径是相似的。理论上，从探测器的时间延迟中减去类星体的时延延迟从而得到ΔDOR测量值，将延迟乘以光速转换为距离。
+
+然而，类星体和探测器不能同时测量，因此在实际测量中，一次ΔDOR测量由三次测量组成：探测器-类星体-探测器或类星体-探测器-类星体，然后在第一次和第二次测量之间进行插值计算转换到与第二次测量相同的时间，由此计算出测该次测量值。
+
+ΔDOR已经在ESA的许多行星际探测器任务如火星快车、金星快车、罗塞塔等任务中得到应用，未来的任务如盖亚（Gaia，ESA新一代太空光学望远镜）等也将继续得到应用。
+
+---
+
+**参考**
+
+1. [ESA - About delta DOR](https://www.esa.int/Enabling_Support/Operations/About_delta_DOR)
