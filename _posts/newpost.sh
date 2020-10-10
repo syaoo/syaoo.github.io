@@ -5,6 +5,9 @@
 # 下一步计划加入对background_image的选择、及其他Yaml头信息的丰富
 # v1.01 
 # 更新：随机background_image，更变yaml头字符串组织方式；
+# v1.02
+# 添加 chart、mermaid设置
+#
 # TODO：增加自定义选项
 
 # ************************************
