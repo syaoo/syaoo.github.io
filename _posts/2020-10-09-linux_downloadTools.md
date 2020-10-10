@@ -2,7 +2,6 @@
 title: Linux中的几款下载工具
 tag: ['Linux']
 mathjax: false
-# dadsa
 article_header:
   type: overlay
   theme: dark
