@@ -11,67 +11,46 @@ article_header:
     src: /assets/images/cover3.jpg
 ---
 
-abstract
+介绍了几款Linux系统中的下载工具常用的wget、curl等，媒体下载工具youtube-dl、you-get以及几种Torrent下载工具。
 
 <!--more-->
 在Linux系统中最常用的两个CLI下载工具是`wget`和`curl`，初次之外还有其他许多有用的下载工具、甚至是torrents下载工具。
 
-## Wget
+## 基础下载工具
+### Wget
 
 这是一款功能丰富且非常有名的下载工具，除基本的下载功能外，还具有恢复下载、多文件下载、下载带宽管理等功能。下面介绍`wget`的常用的下载功能，`wget -h`可查看其更多使用帮助。
+```shell
+# 下载html文件
+wget https://linux.cn/article-7369-1.html
+# 下载html文件并保存为a.html
+wget https://linux.cn/article-7369-1.html -O a.html
 
-1. 下载文件
+# 后台下载文件
+wget -b https://linux.cn/article-7369-1.html 
+# 后台下载文件，保存文件名为a.html同时把log信息保存到downloadlog_a.log
+wget -b https://linux.cn/article-7369-1.html -O a.html -o downloadlog_a.log
 
-   ```shell
-   # 下载html文件
-   wget https://linux.cn/article-7369-1.html
-   # 下载html文件并保存为a.html
-   wget https://linux.cn/article-7369-1.html -O a.html
-   ```
+# 断点续传，文件下载意外中断后可使用-c参数继续下载文件
+wget -c https://linux.cn/article-7369-1.html -O a.html
 
-2. 后台下载
+# 从FTP下载文件
+wget --ftp-user=<user_name> --ftp-password=<Give_password> Download-url-address 
+```
 
-   ```shell
-   # 后台下载文件
-   wget -b https://linux.cn/article-7369-1.html 
-   # 后台下载文件，保存文件名为a.html同时把log信息保存到downloadlog_a.log
-   wget -b https://linux.cn/article-7369-1.html -O a.html -o downloadlog_a.log
-   ```
-
-3. 端点续传
-
-   ```shell
-   # 文件下载意外中断后可使用-c参数继续下载文件
-   wget -c https://linux.cn/article-7369-1.html -O a.html
-   ```
-
-4. FTP下载
-
-   ```shell
-   # 从FTP下载文件
-   # wget --ftp-user=<user_name> --ftp-password=<Give_password> Download-url-address 
-   ```
-
-## Curl
+###  Curl
 
 Curl是另一款Linux上常用的下载工具，与wget类似同样支持多文件下载、断点续传等功能。
+```shell
+# 从文件地址下载文件并存为um.mp4
+curl -o um.mp4 http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
+# 以原始文件件名保存文件
+curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4 
 
-1. 下载文件
-
-   ```shell
-   # 从文件地址下载文件并存为um.mp4
-   curl -o um.mp4 http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
-   # 以原始文件件名保存文件
-   curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4 
-   ```
-
-2. 多文件下载
-
-   ```shell
 curl -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_2mb.mp4 -O http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4
-   ```
+```
 
-## Aria2、Axel
+### Aria2、Axel
 
 aria2是一种开源命令行下载加速器，支持多个端口，你可以使用最大带宽来下载文件，其支持Linux、win等多平台。axel也是一款加速下载器，可同时下载多个文件片段以提高下载速度。aria2的功能更为丰富，许多下载工具如Motrix都是基于aria2开发的。
 
