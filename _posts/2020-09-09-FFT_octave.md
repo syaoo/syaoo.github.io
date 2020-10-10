@@ -1,6 +1,6 @@
 ---
 title: FFT与频谱、功率谱、能量谱等
-tag: ['FFT']
+tag: ['fft']
 mathjax: true
 article_header:
   type: overlay

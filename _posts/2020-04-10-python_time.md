@@ -1,6 +1,6 @@
 ---
 title: Python日期、时间处理
-tag: ["Python", "time", "datetime"]
+tag: ["python", "time", "datetime"]
 article_header:
   type: overlay
   theme: dark

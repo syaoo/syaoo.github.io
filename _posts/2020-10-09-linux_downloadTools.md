@@ -1,6 +1,6 @@
 ---
 title: Linux中的几款下载工具
-tag: ['Linux']
+tag: ['linux']
 mathjax: false
 article_header:
   type: overlay

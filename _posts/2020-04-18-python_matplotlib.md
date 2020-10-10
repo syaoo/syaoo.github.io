@@ -1,6 +1,6 @@
 ---
 title: Matplotlib - Python数据可视化
-tag: ["Matplotlib", " Python"]
+tag: ["python", "matplotlib"]
 article_header:
   type: overlay
   theme: dark

@@ -1,6 +1,6 @@
 ---
 title: SSH端口转发
-tag: ["SSH"]
+tag: ["ssh"]
 article_header:
   type: overlay
   theme: dark

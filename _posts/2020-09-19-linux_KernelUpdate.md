@@ -1,6 +1,6 @@
 ---
 title: Linux内核升级
-tag: ['Linux']
+tag: ['linux']
 mathjax: false
 article_header:
   type: overlay

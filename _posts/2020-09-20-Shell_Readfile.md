@@ -1,6 +1,6 @@
 ---
 title: Shell文件读取
-tag: ['Shell']
+tag: ['shell']
 mathjax: false
 article_header:
   type: overlay

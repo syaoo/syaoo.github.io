@@ -1,6 +1,6 @@
 ---
 title: SSL证书申请与配置acme.sh和certbot
-tag: ["HTTPS", "certbot", "acme.sh"]
+tag: ["ssl", "certbot", "acme.sh"]
 article_header:
   type: overlay
   theme: dark

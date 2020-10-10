@@ -1,6 +1,6 @@
 ---
 title: 使用Systemd管理服务（开机自启）
-tag: ['systemctl','开机自启']
+tag: ['linux', 'systemctl']
 article_header:
   type: overlay
   theme: dark

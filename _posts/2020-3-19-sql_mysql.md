@@ -1,6 +1,6 @@
 ---
 title: MySQL数据库
-tag: mysql
+tag: sql
 article_header:
   type: overlay
   theme: dark

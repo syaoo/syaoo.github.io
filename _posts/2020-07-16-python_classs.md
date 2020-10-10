@@ -1,6 +1,6 @@
 ---
 title: Python类中的方法-实例方法、类对象、静态对象以及__str__和__repr__
-tag: ['Python','类定义']
+tag: ['Python']
 article_header:
   type: overlay
   theme: dark

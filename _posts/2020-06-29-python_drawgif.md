@@ -1,6 +1,6 @@
 ---
 title: 使用matplotlib库绘制动图的两种方法
-tag: ['matplotlib','animation']
+tag: ['python', 'matplotlib','animation']
 article_header:
   type: overlay
   theme: dark

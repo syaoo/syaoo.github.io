@@ -1,6 +1,6 @@
 ---
 title: Streamlit - Python Web应用框架
-tag: Streamlit
+tag: [python, streamlit]
 article_header:
   type: overlay
   theme: dark
@@ -49,6 +49,7 @@ article_header:
 
     ![86fPpj.png](https://s1.ax1x.com/2020/03/20/86fPpj.png)
     
+
 <a class="button button--success button--rounded button--lg" href="/assets/code/StreamlitTest.py"><i class="fas fa-download"></i>演示程序</a>
 
 ## 使用入门

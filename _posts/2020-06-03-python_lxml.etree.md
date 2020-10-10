@@ -1,6 +1,6 @@
 ---
 title: lxml.etree中文乱码问题
-tag: ["lxml", "python"]
+tag: ["python", "lxml"]
 article_header:
   type: overlay
   theme: dark

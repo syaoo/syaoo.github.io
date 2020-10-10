@@ -1,6 +1,6 @@
 ---
 title: screen使用（摘录）
-tag: ['Linux','screen']
+tag: ['linux','screen']
 article_header:
   type: overlay
   theme: dark

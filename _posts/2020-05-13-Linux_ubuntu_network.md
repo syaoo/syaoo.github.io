@@ -1,6 +1,6 @@
 ---
-title: Ubuntu虚拟机从Vmware迁移到Vbox后无法连接网络
-tag: ["Ubuntu", "Vbox"]
+title: Ubuntu虚拟机无法连接网络
+tag: ["ubuntu"]
 article_header:
   type: overlay
   theme: dark

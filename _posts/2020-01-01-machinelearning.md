@@ -1,7 +1,7 @@
 ---
 title: 机器学习 梯度下降-线性回归与逻辑回归
 date: 2019-12-09 20:19:21
-tags: ["机器学习", "梯度下降", "线性回归","逻辑回归"]
+tags: ["机器学习"]
 mathjax: true
 article_header:
   type: overlay

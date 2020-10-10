@@ -1,6 +1,6 @@
 ---
 title: Python数据处理(1) - Numpy数据类型
-tag: ["Numpy", "Python"]
+tag: ["python","numpy"]
 article_header:
   type: overlay
   theme: dark

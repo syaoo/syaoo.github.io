@@ -1,6 +1,6 @@
 ---
 title: Shell学习记录
-tag: ['Shell']
+tag: ['shell']
 mathjax: false
 article_header:
   type: overlay
