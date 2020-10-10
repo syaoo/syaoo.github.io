@@ -28,6 +28,11 @@ front(){
     context="title: $title\n\
 tag: ['tag1','tag2']\n\
 mathjax: false\n\
+mathjax_autoNumber: true\n\
+# Mermaid
+mermaid: false\n\
+# Chart
+chart: false\n\
 article_header:\n\
 ${bs}type: overlay\n\
 ${bs}theme: dark\n\
