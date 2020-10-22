@@ -78,3 +78,32 @@ COMMIT
 # Completed on Mon Sep 21 14:21:18 2020
 ```
 
+## 实践
+
+### 虚拟机端口转发配置记录
+端口分配：
+
+虚拟机1：5980-5999给虚拟机(172.16.4.129)VNC端口，222给虚拟机(172.16.4.129)ssh端口。
+
+虚拟机2：5970-5979给虚拟机(172.16.4.128)VNC端口；221给虚拟机(172.16.4.128)ssh端口。
+
+启用转发功能
+编辑 /etc/sysctl.conf
+net.ipv4.ip_forward = 0 修改为 net.ipv4.ip_forward = 1 
+sysctl -p 使改动生效
+
+iptables -t nat -A PREROUTING -p tcp --dport 5950:5999 -j DNAT --to-destination [要转发的服务器IP]
+
+```
+# ssh端口转发
+iptables -t nat -A PREROUTING -p tcp -m tcp --dport 222 -j DNAT --to-destination 172.16.4.129:22 
+iptables -t nat -A POSTROUTING -d 172.16.4.0/16 -p tcp -m tcp --dport 22 -j SNAT --to-source 172.16.4.1
+# vnc端口转发
+iptables -t nat -A PREROUTING -p tcp -m tcp --dport 5980:5999 -j DNAT --to 172.16.4.129
+iptables -t nat -A POSTROUTING -p tcp -m tcp --dport 5980:5999 -j MASQUERADE
+```
+
+
+如，ssh连接172.16.4.129虚拟机 ssh -p222 user@202.127.24.100
+vnc连接：虚拟机内使用5980-5999端口开启vnc，如用端口5982（vncserver :82）连接vnc时直接使用202.127.24.100:82
+

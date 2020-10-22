@@ -82,7 +82,7 @@ fi
 len_fn=${#fname}
 bg=$[len_fn-3]
 md=${fname:bg:len_fn}
-if [ $md != '.md' ]
+if [ "$md" != '.md' ]
 then
     fname="${fname}.md"
     echo $fname

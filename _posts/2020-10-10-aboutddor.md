@@ -1,5 +1,5 @@
 ---
-title: Delta-DOR相对差分单向测距[译]
+title: 相对差分单向测距(ΔDOR)[译]
 date: 2020-10-10 18:35
 tag: ['ΔDOR']
 mathjax: false
@@ -17,7 +17,7 @@ article_header:
     src: 'https://s1.ax1x.com/2020/10/10/0yXVaV.jpg'
 ---
 
-Delta-DOR或ΔDOR（delta - Differential One-way Range，相对差分单向测距）是
+相对差分单向测距（ΔDOR、Delta-DOR、Delta-Differential One-way Range）是一种用于深空探测器导航的测量技术，它通过对深空探测器邻近类星体（河外射电源）的观测来修正信号传输介质、地面设备引起的测量误差，以提高测量精度，相对于传统的测距和双向多普勒测量，ΔDOR能够在垂直视线方向获得高精度测量结果，提高对探测器的导航能力。
 
 <!--more-->
 2005年欧空局（ESA）的第二个深空天线 Cebreros (DSA 2)正式投入使用，标志着ESA具备了开展Delta-DOR测量的能力。Delta-DOR是用于行星际深空探测器导航的一种重要的新技术。
