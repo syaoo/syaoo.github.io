@@ -235,6 +235,8 @@ certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
 echo "0 0,12 * * * root python3 -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q --pre-hook 'service haproxy stop' --post-hook 'service haproxy start'" | sudo tee -a /etc/crontab > /dev/null
 ```
 
+Github Action 部署 acme.sh 全自动批量签发多域名证书 https://www.ioiox.com/archives/104.html
+
 ---
 
 **参考**

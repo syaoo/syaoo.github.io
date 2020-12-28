@@ -203,8 +203,10 @@ systemctl daemon-reload
 systemctl enable gossa
 ```
 
+## 自动挂载网络服务器
 
-
+[Mount a volume using systemd - DEV](https://dev.to/adarshkkumar/mount-a-volume-using-systemd-1h2f)
+[使用systemd挂载文件系统 - jTree Home](https://jtree.cc/post/%E4%BD%BF%E7%94%A8systemd%E6%8C%82%E8%BD%BD%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/)
 
 **参考**
 
