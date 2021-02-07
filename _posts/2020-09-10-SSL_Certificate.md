@@ -59,6 +59,8 @@ export Ali_Secret="dasfadfafjasdfja"
 ```shell
 # 对于阿里云 --dns的参数是dns_ali
 acme.sh --issue --dns dns_ali  -d my.domain.com
+# 泛域名
+acme.sh --issue --dns dns_ali  -d domain.com -d *.domain.com
 ```
     完成后会给出证书的位置:
 ```shell
@@ -189,7 +191,7 @@ certbot certonly -a dns-aliyun\
 --config-dir certbot/config/ --test-cert
 ```
 
-`-a dns-aliyun`指定使用的阿里云API，``--dns-aliyun-credentials`指定之前创建的认证文件，`--test-cert`参数是用于测试证书申请，可避免申请次数超限
+`-a dns-aliyun`指定使用的阿里云API，``--dns-aliyun-credentials`指定之前创建的认证文件，`--test-cert`参数是用于测试证书申请，可避免申请次数超限。
 
 第一次使用是会要求输入一个邮箱，用于提醒更新证书或接收其他信息。
 

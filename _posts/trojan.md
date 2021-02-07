@@ -220,14 +220,14 @@ server {
 删除`/etc/nginx/sites-enabled/`目录下的`default`文件，创建一个`my.domain.com`软链到到此目录：
 
 ```shell
-ln -s ln -s /etc/nginx/sites-available/my.domain.com /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/my.domain.com /etc/nginx/sites-available/
 ```
 
 重启Nginx服务即可`sudo systemctl restart nginx`。
 
 这样，就可以使用trojan客户端，来使用代理功能，而使用浏览器访问`my.domain.com`时则会打开web页面。
 
-使用Caddy实现与上面相同的效果，其配置文件：
+使用Caddy实现与上面相同的效果，其配置文件（Caddyflie）：
 
 ```
 :80 {

@@ -67,6 +67,13 @@ article_header:
 
 `win+R`打开运行，输入`\\`+samba服务器的地址（IP或域名）:`\\192.168.1.1`，根据提示输入用户名、密码即可进入共享目录。
 
+#### 连接失败
+遇到“您不能访问此共享文件夹，因为你组织的安全策略阻止未经身份验证的来宾访问，这些策略可帮助保护你的电脑免受网络上不安全不安全和设备或恶意设备的威胁”提示，无法连接smb服务。找到四种解方案：
+
+1. 在`smb.conf`文件中移除/注释 `map to guest = bad user` 或 设置 `map to guest = never`；
+2. 修改注册表，`Ctrl+r`输入`regedit`进入注册表编辑器，找到`计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters`将`AllowInsecureGuestAuth`值修改为`1`;
+3. 修改组策略，`计算机配置`-`管理模版`-`网络`-`Lanman工作站`-`启用不安全的来宾登陆`，编辑策略设置，改为“已启用”。
+
 ### Android & IOS
 
 Android下需要使用samba客户端或者具有samba功能的文件管理器，Android端推荐使用[**CX文件管理器**](https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer)：除本地文件管理外，还支持网盘（DropBox、GoogleDrive、OneDrive、box）、SMB、FTP、WebDAV等。IOS端推荐使用**ES文件浏览器**。
@@ -101,18 +108,19 @@ Android下需要使用samba客户端或者具有samba功能的文件管理器，
    mkdir sharedir
    ```
 
-   
-
 2. 挂载目录
 
    ```bash
-   sudo mount -t cifs -o user=<username>,password=<password> /host/share ./sharedir/
+   sudo mount -t cifs -o user=<username>,password=<password>,uid=<user>,gid=<group>  /host/share ./sharedir/
    ```
 
-   
+   注意要加上`uid`和`gid`参数使指定到用户和用户组具有相应到访问权限。
 
-3. df
+3. `df`可用查看挂载情况。
 
 
 **参考**
 1. [smbclient 命令，Linux smbclient 命令详解：交互方式访问samba服务器 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/smbclient.html)
+2. [[SOLVED] W10: You can't access this shared folder because your organization's security policies block unauthenticated guest access - General Support - Unraid](https://forums.unraid.net/topic/59672-solved-w10-you-cant-access-this-shared-folder-because-your-organizations-security-policies-block-unauthenticated-guest-access/)
+3. [Windows 10 不能访问Samba共享 "因为你组织的安全策略阻止未经身份验证的来宾访问" - 简书](https://www.jianshu.com/p/be7dc5875923)
+4. [你不能访问此共享文件夹，因为你组织的安全策略阻止未经身份验证的来宾访问...](https://social.technet.microsoft.com/Forums/zh-CN/6ea3bfd7-582a-4333-a932-594a5a5394d8?forum=win10itprogeneralCN)
