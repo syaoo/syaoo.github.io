@@ -1,5 +1,5 @@
 ---
-title: YAML
+title: YAML数据格式及python读取
 tag: ["YAML", "PyYAML"]
 article_header:
   type: overlay

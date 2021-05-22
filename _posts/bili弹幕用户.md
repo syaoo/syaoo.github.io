@@ -1,5 +1,5 @@
 ---
-title: YAML
+title: B站弹幕发送者
 tag: ["YAML", "PyYAML"]
 article_header:
   type: overlay

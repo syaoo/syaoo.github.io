@@ -97,7 +97,7 @@ acme.sh --install-cert -d example.com \
 ##### 撤销与手动更新证书
 
 ```shell
-acme.sh --renew -f -d my.domain.com # 强制更新证书，当证书到期时间多余30天时使用-f
+acme.sh --renew -f -d my.domain.com --dns dns_ali # 强制更新证书，当证书到期时间多余30天时使用-f
 acme.sh --revoke -d my.domain.com # 撤销证书
 ```
 

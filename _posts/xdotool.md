@@ -1,5 +1,5 @@
 ---
-title: xdotool
+title: 使用命令控制鼠标键盘输入--xdotool
 date: 2020-11-06 14:56
 tag: ['tag1','tag2']
 mathjax: false
