@@ -98,6 +98,6 @@ real*8:: a(n),b(n),c
 ```
 
 **参考:**  
-[完全用Python工作——F2PY简明使用指南 - Tech Notes of Code Monkey](https://blog.finaltheory.me/research/Introduction-to-F2PY.html)  
-[Python调用C/C++的两种方法 - 知乎](https://zhuanlan.zhihu.com/p/39098612)  
-[使用 F2PY | NumPy 中文](https://www.numpy.org.cn/f2py/usage.html)  
+1. [完全用Python工作——F2PY简明使用指南 - Tech Notes of Code Monkey](https://blog.finaltheory.me/research/Introduction-to-F2PY.html)  
+2. [Python调用C/C++的两种方法 - 知乎](https://zhuanlan.zhihu.com/p/39098612)  
+3. [使用 F2PY | NumPy 中文](https://www.numpy.org.cn/f2py/usage.html)  
