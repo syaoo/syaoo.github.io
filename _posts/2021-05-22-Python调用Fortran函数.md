@@ -1,6 +1,6 @@
 ---
 title: 在Python中调用Fortran函数
-tag: ["Python","Fortran"]
+tag: ['Python', 'Fortran']
 article_header:
   type: overlay
   theme: dark
@@ -13,6 +13,7 @@ article_header:
 Fortran作为一个有着历史悠久的用于科学计算的编程语言，有着许多优秀的库函数，而Python是一个比较容易上手的脚本语言，同时拥有丰富的工具库，将二者结合能大大提升程序开发及运行效率。f2py是Python库Numpy提供的一个用于连接Fortran和Python的工具，它能够将Fortran代码编译为可供Python使用的动态库。
 
 <!---more-->
+
 C04序列作为一个相对权威的EOP产品，它提供了极移X、Y、UT1、日长等参数。通常为了检核EOP解算结果的准确性，要与C04进行比较，而C04中提供的EOP的时标都是在UTC 0时的，而解算的时标可能回在其他时刻，因此需要对C04进行插值后在进行比较。
 
 刚好手上有一个Fortran编写的C04插值程序，它可以根据输入的EOP序列（mjd、X、Y、UT1）进行任意时刻的插值。但是懒得去写一个Fortran程序来调用这个函数，于是想到如果用Python直接调用这个函数，那么可以大大减少工作量。这时就需要请出F2PY这个工具了。
