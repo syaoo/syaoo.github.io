@@ -21,11 +21,12 @@ abstract
 
 <!--more-->
 
-context
+dpkg-shlibdeps
+
 
 [Debian 维护者指南](https://www.debian.org/doc/manuals/debmake-doc/index.zh-cn.html)
 
-
+[Chapter 4. 简单例子](https://www.debian.org/doc/manuals/debmake-doc/ch04.zh-cn.html#big-picture)
 
 
 ---

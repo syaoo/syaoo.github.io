@@ -163,6 +163,14 @@ pip3 install certbot certbot-dns-aliyun
 ```
 cerbot有许多插件可以根据需要按装，如`python3-certbot-nginx`、`python3-certbot-apache`分别用于自动为Nginx、Apache服务器自动配置证书。`cerbot-dns-aliyun`是阿里云的DNS插件，其他DNS服务商也需要相应的插件，官方支持[列表](https://certbot.eff.org/docs/using.html#dns-plugins)。
 
+为域名`my.domain.com`签发域名证书，先停止使用80端口的服务，如nginx，之后使用下面命令签发证书，完成后会给出证书文件地址及到期时间。
+
+```
+sudo certbot certonly -d my.domain.com --standalone
+```
+
+
+
 [这里](https://certbot.eff.org/instructions)有针对不同系统及web服务的使用指导，更详细说明可以参考[官方文档](https://certbot.eff.org/docs/using.html)。
 
 ### 使用certbot申请证书并为Jupyterlab配置HTTPS
