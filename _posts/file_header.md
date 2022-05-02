@@ -14,7 +14,7 @@ article_header:
   background_color: '#203028'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
-    src: /assets/images/cover3.jpg
+    src: /assets/images/cover0.jpg
 ---
 
 ### 根据网易云音乐ID获取歌曲详细信息
@@ -38,6 +38,7 @@ article_header:
 ### 文件元数据
 
 [[原创]MP3文件的数据结构以及为mp3内嵌歌词的代码 — 编程爱好者社区](http://bbs.pfan.cn/post-372622.html)
+[File Signatures](https://www.garykessler.net/library/file_sigs.html)
 
 ---
 
