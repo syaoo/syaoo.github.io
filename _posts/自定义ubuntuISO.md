@@ -29,6 +29,11 @@ context
 
 [InstallCDCustomization - Community Help Wiki](https://help.ubuntu.com/community/InstallCDCustomization)
 
+[导入要与 WSL 一起使用的任何 Linux 发行版 | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/wsl/use-custom-distro)
+
+[mvallim/live-custom-ubuntu-from-scratch: This procedure shows how to create a bootable and installable Ubuntu Live (along with the automatic hardware detection and configuration) from scratch.](https://github.com/mvallim/live-custom-ubuntu-from-scratch)
+
+[KickstartCompatibility - Community Help Wiki](https://help.ubuntu.com/community/KickstartCompatibility)
 
 ---
 
