@@ -17,10 +17,8 @@ article_header:
     src: /assets/images/cover1.jpg
 ---
 
-# DEB安装包的制作
-
 `deb`是在Debian及其衍生版Ubuntu、Deepin等Linux系统中使用的应用程序安装包的文件格式，以`.deb`作为其扩展名。通过deb可以方便的分发、安装软件，同时有效管理软件依赖。
-
+<!--more-->
 ## deb文件结构
 
 `deb`文件的本质是包含控制信息和应用程序安装数据的数据包，其中有三个文件。
