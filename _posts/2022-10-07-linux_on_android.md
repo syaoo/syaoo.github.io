@@ -26,19 +26,19 @@ article_header:
 ## Linux Deploy
 
 [Linux Deploy](https://github.com/meefik/linuxdeploy/releases)需要使用ROOT权限，使用Magisk可以获取并管理ROOT权限。使用方法可以参考下面其中一篇内容：
-- [Android 玩家必备神器入门：从零开始安装 Magisk - 少数派](https://sspai.com/post/67932)
-- [Installation | Magisk](https://topjohnwu.github.io/Magisk/install.html)
+- [Android 玩家必备神器入门：从零开始安装 Magisk - 少数派](https://sspai.com/_post/67932)
+- [Installation - Magisk](https://topjohnwu.github.io/Magisk/install.html)
 - [Magisk安装教程 - Magisk中文网](https://magiskcn.com/)
 
 Linux Deploy的使用也比较简单，打开软件后主界面写着简单的使用引导。首先点击右下角配置安装选项（下图左侧），如发行版、安装类型、用户名、密码、是否启用ssh等，具体各项说明可参考[Linux Deploy 指南](https://zixijian.github.io/2020/09/01/007.html)。注意配置安装选项时一定要启用ssh，否则可能在安装好后无法连接系统。配置完成后点击右上角菜单中的安装，待安装完成后再点击下方的启动按钮即可通过ssh连接已安装的系统。
 
-![Linux Deploy](/post/pic/linux_on_android/ld010.jpg)
+![Linux Deploy](/_post/pic/linux_on_android/ld010.jpg)
 
 ## Termux
 
 [Termux](https://github.com/termux/termux-app/releases)是一个Android终端模拟器和Linux环境APP，其不需要root即可实现在Android上使用Linux环境。Termux自身具有最新化的Linux基础系统环境，而且可以使用包管理器(pkg/apt)来安装其他软件，如openssh实现通过ssh方法Termux。
 
-![termux](/post/pic/linux_on_android/termux01.jpg)
+![termux](/_post/pic/linux_on_android/termux01.jpg)
 
 ### 通过ssh连接Termux
 
@@ -78,13 +78,13 @@ pkg install proot-distro
 ```
 
 2. 查看proot-distro支持的Linux系统列表
-![proot-distro list](/post/pic/linux_on_android/termux-proot3.png)
+![proot-distro list](/_post/pic/linux_on_android/termux-proot3.png)
 
 3. 安装archlinux
-![proot-distro install](/post/pic/linux_on_android/termux-proot2.png)
+![proot-distro install](/_post/pic/linux_on_android/termux-proot2.png)
 
 4. 进入archlinux
-![proot-distro login](/post/pic/linux_on_android/termux-proot4.png)
+![proot-distro login](/_post/pic/linux_on_android/termux-proot4.png)
 
 
 在使用`proot-distro install`安装系统时如遇到`CANNOT LINK EXECUTABLE "curl": library "libssl.so.1.1" not found`，可尝试使用pkg update更新程序。
@@ -93,11 +93,11 @@ pkg install proot-distro
 
 Aidlux是阿里开发的智能物联网开发平台，通过它可以在Android手机上使用Linux，该软件不需要Root，在各家应用商店均可直接下载安装。当前1.2.1内置的是一个完整的Debian 10，可以开箱即用，同时还自带图形界面，界面应该是以web方式实现的，其中文件管理器的后台是filebrowser，一个web文件管理器。
 
-![aidlux手机端截图](/post/pic/linux_on_android/aidlux00.jpg)
+![aidlux手机端截图](/_post/pic/linux_on_android/aidlux00.jpg)
 
 在aidlux中点击Cloud_ip会启动web远程桌面，通过其中提供的地址可以在浏览器中使用aidlux。
 
-![aidlux远程桌面截图](/post/pic/linux_on_android/aidlux03.png)
+![aidlux远程桌面截图](/_post/pic/linux_on_android/aidlux03.png)
 
 ---
 
