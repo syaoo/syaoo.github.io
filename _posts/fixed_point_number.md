@@ -48,3 +48,9 @@ int main(){
         printf("f0 is %.9lf, f1 is %.9lf, f2 = f0*f1 = %.9lf\n",f0,f1,f2);
 }
 ~           /storage/emulated/0/Download/magisk_patched-25200_onmpd.img
+
+
+
+02106295625
+
+cdf4a007e2b02a0c49fc9b7ccfbb8a10c644f635e1765dcf2a7ab794ddc7edac
