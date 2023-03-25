@@ -37,7 +37,7 @@ Spreadsheet.kt2 - (Spreadsheet.ktyky + Spreadsheet.ktykj) / 2 + Spreadsheet.kt2 
 
 
 #include <stdio.h>
-int main(){
+int main(){   
         double d0=0.0000432;
         double d1=3.42;
         double d2=d0*d1;

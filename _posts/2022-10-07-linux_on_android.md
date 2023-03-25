@@ -34,6 +34,67 @@ Linux Deploy的使用也比较简单，打开软件后主界面写着简单的�
 
 ![Linux Deploy](/pic/linux_on_android/ld010.jpg)
 
+### 自动启动服务
+右下角打开设置，勾选初始化启用，SSH连接到linux，新建/etc/rc.local目录，在其中添加启动脚本，启动脚本需要至少包含以下内容
+```shell
+case "$1" in
+  start)
+    # 系统启动过程中执行的命令
+    ;;
+  stop)
+    # 系统关闭过程中执行的命令
+    ;;
+esac
+```
+```shell
+#! /bin/bash
+
+### BEGIN INIT INFO
+# Description:       Run Foo service
+### END INIT INFO
+
+USER=android
+BASE_DIR=/home/android/program/alist
+echo $0
+start_with_nohup(){
+        echo "Start Alist Server..."
+        cd $BASE_DIR
+        su ${USER} -c 'nohup ./alist server > /dev/null 2>&1 &'
+        echo "Start Alist Server ok"
+}
+start_with_screen(){
+        echo "Start Alist Server..."
+        #sudo -u ${USER} /bin/bash -c 'cd $HOME/program/alist && screen -dmS alist ./alist server'
+        cd $BASE_DIR
+        # sudo -u ${USER} /bin/bash -c 'screen -dmS alist ./alist server'
+        sudo -u ${USER} screen -dmS alist ./alist server
+        echo "Start Alist Server ok"
+}
+case "$1" in
+  start)
+          start_with_nohup
+          #start_with_screen
+    ;;
+  stop)
+    echo "Stopping Alist Server..."
+    #sudo -u ${USER} bash -c 'pkill -ef "dmS alist ./alist server"'
+    sudo -u ${USER}  pkill -ef "alist server"
+    sleep 2
+    ;;
+  *)
+    echo "Usage: /etc/init.d/foo {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+```
+
+### 断网
+使用linux deploy的chroot方案安装了debian之后出现这个问题的原因主要是安卓的doze mode，在termux下键入su 进入类似adb shell的模式，然后使用dumpsys deviceidle disable禁用这个锁屏之后的睡眠模式。
+
+[解决安卓linux dploy下非root用户的进程在锁屏几分钟之后断网的问题--禁用doze mode。](https://blog.csdn.net/fjh1997/article/details/111207694)
+[开机自动挂载Linux Deploy中的Linux容器并开启adbd网络调试 | Torrk's Blog](https://conimi.com/archives/127/#_0x40-%E5%88%86%E6%9E%90init-rc)
 ## Termux
 
 [Termux](https://github.com/termux/termux-app/releases)是一个Android终端模拟器和Linux环境APP，其不需要root即可实现在Android上使用Linux环境。Termux自身具有最新化的Linux基础系统环境，而且可以使用包管理器(pkg/apt)来安装其他软件，如openssh实现通过ssh方法Termux。
