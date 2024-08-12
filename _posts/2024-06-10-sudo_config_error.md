@@ -1,5 +1,5 @@
 ---
-title: sudo权限配置的错误的补救错误
+title: sudo权限配置的错误的补救措施
 tag: ['linux', 'sudo']
 article_header:
   type: overlay
