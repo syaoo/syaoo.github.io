@@ -1,6 +1,7 @@
 ---
 title: 直角坐标系变换
 tag: ['数学', '坐标系']
+mathjax: true
 article_header:
   type: overlay
   theme: dark
@@ -102,7 +103,7 @@ x' = x\cos(\alpha) - y \sin(\alpha)\\
 y' = y\cos(\alpha) + x \sin(\alpha)
 $$
 
-[![坐标系旋转-方法1](./pic/coordinate-transform/坐标转换-1.png "坐标系旋转")](https://www.geogebra.org/m/d8sjhgay)
+[![坐标系旋转-方法1](/pic/coordinate-transform/坐标转换-1.png "坐标系旋转")](https://www.geogebra.org/m/d8sjhgay)
 
 ### 二维坐标旋转推导方法2
 
@@ -127,7 +128,7 @@ x' = x\cos(\alpha) - y \sin(\alpha)\\
 y' = y\cos(\alpha) + x \sin(\alpha)
 $$
 
-[![坐标系旋转-方法2](./pic/coordinate-transform/坐标转换-2.png "向量旋转")](https://www.geogebra.org/m/g7awma3n)
+[![坐标系旋转-方法2](/pic/coordinate-transform/坐标转换-2.png "向量旋转")](https://www.geogebra.org/m/g7awma3n)
 
 上述$(x,y)$与$(x',y')$的变换关系可以写成矩阵的形式
 
@@ -176,7 +177,7 @@ Y \Rightarrow Y \\
 X \Rightarrow X
 $$
 
-![](./pic/coordinate-transform/坐标系旋转示意图.png)
+![](/pic/coordinate-transform/坐标系旋转示意图.png)
 
 零绕X轴、Y轴、Z轴旋转角分别为 $\epsilon_x$、$\epsilon_y$、$\epsilon_z$ 将上述映射关系带入到二维旋转矩阵中有：
 

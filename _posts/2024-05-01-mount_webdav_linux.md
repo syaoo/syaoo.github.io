@@ -100,6 +100,6 @@ sudo systemctl stop home-xw-dav.automount
 
 1. [davfs2 - ArchWiki](https://wiki.archlinux.org/title/Davfs2)
 2. [How To Install ownCloud 7 On Ubuntu 14.04](https://www.howtoforge.com/how-to-install-owncloud-7-on-ubuntu-14.04)
-3. [Mounting a WebDAV directory in Linux (Ubuntu) | Kasun's Tech Blog](https://techiech.blogspot.com/2013/04/mounting-webdav-directory-in-linux.html)
+3. [Mounting a WebDAV directory in Linux (Ubuntu)](https://techiech.blogspot.com/2013/04/mounting-webdav-directory-in-linux.html)
 4. [Fstab - Use SystemD automount - Manjaro](https://wiki.manjaro.org/index.php/Fstab_-_Use_SystemD_automount)
 5. [fstab - ArchWiki](https://wiki.archlinux.org/title/fstab)
