@@ -1,3 +1,15 @@
+---
+title: DEB安装包的制作
+tag: ['linux', 'deb']
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /assets/images/cover1.jpg
+---
+
 # DEB安装包的制作
 
 `deb`是在Debian及其衍生版Ubuntu、Deepin等Linux系统中使用的应用程序安装包的文件格式，以`.deb`作为其扩展名。通过deb可以方便的分发、安装软件，同时有效管理软件依赖。

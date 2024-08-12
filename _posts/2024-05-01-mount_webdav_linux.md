@@ -1,3 +1,15 @@
+---
+title: Linux挂载webdav网盘
+tag: ['linux', 'webdav']
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /assets/images/cover1.jpg
+---
+
 # Linux挂载webdav网盘
 
 简单介绍在Linux中挂载使用WebDav网盘的方法。
