@@ -1,5 +1,5 @@
 ---
-title: 一次sudo权限配置的错误操作及补救
+title: sudo权限配置的错误的补救错误
 tag: ['linux', 'sudo']
 article_header:
   type: overlay
@@ -10,7 +10,11 @@ article_header:
     src: /assets/images/cover1.jpg
 ---
 
-# 一次sudo权限配置的错误操作及补救
+记录一次sudo权限配置的错误操作及补救措施。
+
+<!--more-->
+
+<!-- # 一次sudo权限配置的错误操作及补救 -->
 
 通常情况下修改sudo权限配置文件(/etc/sudoers或/etc/sudoers.d/) **需要使用visudo完成**，该工具打开文件进行编辑，并在退出时检查文件内容是否正确。
 
